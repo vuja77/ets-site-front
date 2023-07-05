@@ -132,7 +132,7 @@ section.partneri h2 {
 		margin-left: 1px;
 	}
 
-	.cont div:nth-child(2) p, .dots{
+	section.partneri .cont div:nth-child(2) p, .dots{
 		margin-left: 10px;
 		font-size: clamp(10px, 10px, 20px);
 	}

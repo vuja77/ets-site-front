@@ -26,7 +26,9 @@ function Servisi() {
 			<div id="gr"></div>
 			<div id="bck-box"></div>
 			<img id="dots"src={dots}/>
+			
 		</section>
+		
 	);
 }
 

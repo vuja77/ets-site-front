@@ -128,13 +128,14 @@ body {
 	section#servisi .box {
 		margin-left: 20px;
 	}
-	section#servisi .box div{
-
+	
+	section#servisi .box .Srv{
+		gap: 0px;
 		width: 180px;
 		height: 216px;
 	}
-	section#servisi .box .Srv{
-		gap: 0px;
+	section#servisi .box .Srv p{
+		font-size: 11px;
 	}
 	section#servisi .box .Srv div {
 		width: 80px;

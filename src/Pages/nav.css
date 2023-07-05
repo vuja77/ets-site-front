@@ -5,15 +5,16 @@ nav {
 	padding-left: 50px;
 	padding-top: 10px;
 	padding-bottom: 30px;
-	align-items: center;
+	align-items: top;
 	z-index: 3;
-	vertical-align: center;
+	vertical-align: top;
 	flex-direction: row;
 	display: inline-flex;
 	justify-content: space-between;
 
 	background-color: white;
 	text-decoration: none;
+	transition: 0.5s;
 }
 a {
 	text-decoration: none;
@@ -42,6 +43,7 @@ nav ul li {
 
 nav img {
 	width: 50px;
+	height: 50px;
 	justify-items: left;
 	display: inline-block;
 
@@ -53,19 +55,63 @@ nav button {
 	border: none;
 	border-radius: 8px;
 	color: white;
+
 }
 #Hambuger {
 	display: none;
+}
+#Hambuger button {
+	background: none;
+	color: #000;
+	width: 30px;
+}
+#Hambuger button #close {
+	display: none;
+}
+#Hambuger button #bars {
+	display: block;
+}
+
+#Hambuger button.active #close {
+	display: block;
+}
+#Hambuger button.active #bars {
+	display: none;
+}
+#MobileMeni {
+	display: none;
+}
+
+#MobileMeni.active {
+display: block;
 }
 @media only screen and (max-width: 768px) {
 	nav ul li {
 		display: none;
 	}
 
-	ul li#Hambuger {
-		display: block;
+	ul li#Hambuger,#Login {
+		display: inline-flex;
+		vertical-align: center;
+		align-items: center;
 	}
-}
-nav {
-	display: none;
+	ul li#Hambuger {
+		height: 40px;
+	}
+	nav.active {
+		height: 40%;
+		
+	}
+	#MobileMeni {
+		position: absolute;
+		
+		height: 300px;
+		width: 100%;
+		top: 100px;
+		z-index: 222;
+	}
+	nav #MobileMeni li {
+		display: block;
+		margin-top: 20px;
+	}
 }
