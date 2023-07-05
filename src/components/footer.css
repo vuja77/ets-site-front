@@ -1,0 +1,26 @@
+footer {
+	margin-top: 100px;
+	width: 100%;
+	font-family: Inter;
+	
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	padding-bottom: 7%;
+}
+footer img {
+	width: 90px;
+	padding-right: 30px;
+}
+footer div {
+	max-width: 300px;
+
+}
+
+footer h3 {
+	font-size: clamp(0.75rem, 0.6786rem + 0.3571vw, 1.25rem);
+}
+footer p {
+	font-size: clamp(0.4375rem, 0.3214rem + 0.5804vw, 1.25rem);
+		line-height: 160%;
+}
