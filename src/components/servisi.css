@@ -1,11 +1,8 @@
 body {
-
 	overflow-x: hidden;
 	margin-right: 50px;
 }
-nav {
-	display: block;
-}
+
 section#servisi {
 	width: 100%;
 	height: 100%;
@@ -20,19 +17,18 @@ section#servisi h1 {
 	z-index: 2;
 	position: relative;
 	font-family: Poppins;
-
 }
 #servisi .box {
 	display: grid;
 	grid-template: auto auto / auto auto;	
 	column-gap: 30px;
-	row-gap: -20px;
+	
 	z-index: 1;
 	margin-top: -100px;
 }
 .box div.Srv {
 	width: 308px;
-height: 359px;
+	height: 359px;
 	background: white;
 	box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.05);
 	border-radius: 40px;
@@ -40,14 +36,15 @@ height: 359px;
 	justify-content: flex-start;
 	flex-direction: column;
 	align-items: center;
-	font-family: Inter;gap: 30px;
+	font-family: Inter;
+	gap: 30px;
 	padding-top: 50px;
 	font-size: 24px;
 }
 .box div.Srv p  {
 	font-size: 14px;
 }
-#gr {
+#grayBox {
 	position: absolute;
 	width: 65%;
 	right: 50px;
@@ -57,47 +54,39 @@ height: 359px;
 	background: #211E611A;
 	border-radius: 100px 0px 0px 0px;
 }
-#bck-box {
+#bckBox {
 	width: 178px;
 	height: 178px;
 	border-radius: 100px 0px 0px 0px;
-background: white;
-position: absolute;
-left: 100px;
-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	background: white;
+	position: absolute;
+	left: 100px;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
-#a {
+#PrijaviStetu, #Obavjestenja {
 	margin-top: 60px;
 }
-#a div, #b div , #v div, #c div {
-	
-	width: 112.127px;
+.Srv div {
+	width: 113px;
 	height: 113px;
 	background: #211E611A;
-	background-image: url("img/prijavistetu.png");
 	background-position: center;
 	background-size: cover;
 	border-radius: 20px;
 }
-#b div {
+#PrijaviStetu div{
+	background-image: url("img/prijavistetu.png");
+}
+#Lms div {
 	background-image: url("img/lms.png");
 
 }
-#c div {
+#ZastoCutis div {
 	background-image: url("img/zastocutis.png");
 
 }
-#v div {
+#Obavjestenja div {
 	background-image: url("img/obvj.png");
-	
-}
-#v {
-	margin-top: 30px;
-
-}
-body {
-	background: #FEFEFE;
-	overflow-x: hidden;
 }
 #dots {
 	position: absolute;
@@ -107,6 +96,9 @@ body {
 }
 
 @media only screen and (max-width: 900px) {
+	body {
+		margin-right: 20px;
+	}
 	section#servisi {
 		flex-direction: column;
 		margin-top: 100px;
@@ -114,12 +106,12 @@ body {
 	section#servisi .box {
 		margin-top: 30px;
 	}
-	#bck-box {
-    top: 100%;
-    width: 100px;
-    height: 100px;
-    margin-top: -190px;
-    left: 23%;
+	#bckBox {
+   		top: 100%;
+		width: 100px;
+		height: 100px;
+		margin-top: -190px;
+		left: 23%;
 		display: none;
 	}
 }
@@ -128,11 +120,10 @@ body {
 	section#servisi .box {
 		margin-left: 20px;
 	}
-	
 	section#servisi .box .Srv{
 		gap: 0px;
 		width: 180px;
-		height: 216px;
+		height: 215px;
 	}
 	section#servisi .box .Srv p{
 		font-size: 11px;
@@ -142,13 +133,10 @@ body {
 		height: 80px;
 		gap: 0px;
 	}
-	#a,#v {
-	margin-top: 0px;
-}
 #b,#c {
 	margin-top: 40px;
 }
-#gr {
+#grayBox {
 	height: 495px;
     width: 90%;
     margin-top: -96px;
@@ -161,7 +149,8 @@ body {
     width: 250px;
 	margin-top: 400px;
 }
-body {
-	margin-right: 20px;
+.Srv h3 {
+	font-size: 17px;
 }
+
 }

@@ -1,7 +1,7 @@
 import Servisi from ".././components/servisi.js";
 import Partneri from ".././components/partneri.js";
-import Foote from ".././components/footer.js";
-import Header from ".././components/header.js";
+import Footer from ".././components/footer.js";
+import Header from "../components/HeroSec.js";
 
 function Home() {
   return (
@@ -9,7 +9,7 @@ function Home() {
     <Header/>
     <Servisi/>
     <Partneri/>
-    <Foote/>
+    <Footer/>
     </div>
   );
 }
