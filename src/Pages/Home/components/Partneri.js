@@ -8,16 +8,19 @@ function Partneri() {
 			id: "cortex",
 			h1: "Cortex Akademija",
 			p: "Cortex akademija predstavlja program edukacije iz oblasti informacionih tehnologija koji implementira ICT Cortex – klaster za informacione tehnologije, inovacije, edukaciju, dizajn i tehnološki razvoj Crne Gore..",
+			dotId: "1",
 		},
 		{
 			id: "vet4web",
 			h1: "VET for Western Balkans",
 			p: "Cilj V4WB je jačanje saradnje između zemalja Zapadnog Balkana i zemalja članica EU, sve aktivnosti: uspostavljanje zajedničkih radnih grupa, razvoj nastavnog plana i programa, nove strategije, .",
+			dotId: "2",
 		},
 		{
 			id: "rcf",
 			h1: "Regionalni Challenge Fond",
 			p: "RCF ima za cilj da ojača relevantnost stručnog obrazovanja i obuke  na tržištu rada finansiranjem ulaganja u opremu i infrastrukturu za pružaoce obuke koji se uključuju aktivnosti obuke sa preduzećima.",
+			dotId: "3",
 		}
 	];
 	let [activeSlide, setSlide] = useState(1);
@@ -45,9 +48,11 @@ function Partneri() {
 								<h2>{Slide.h1}</h2>
 								<p>{Slide.p}</p>
 								<div className="dots">
-									<button onClick={() => setSlide(1)} className={activeSlide == "1" ? "active" : ""}></button>
-									<button onClick={() => setSlide(2)} className={activeSlide == "2" ? "active" : ""}></button>
-									<button onClick={() => setSlide(3)} className={activeSlide == "3" ? "active" : ""}></button>
+									{
+										SliderItems.map((Dots) => {
+											return (<button onClick={() => setSlide(Dots.dotId)} className={activeSlide == Dots.dotId ? "active" : ""}></button>);
+										})
+									}
 								</div>
 							</div>
 							<img id="dot2" src={Dot2} />
