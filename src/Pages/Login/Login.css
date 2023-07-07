@@ -1,15 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap');
+
 * {
 	padding: 0px;
 	margin: 0px;
 	font-family: Nunito Sans;
 	-webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
+
 nav {
 	display: block;
 }
+
 section {
 	display: flex;
 	justify-content: space-between;
@@ -20,6 +23,7 @@ section div {
 	box-sizing: border-box;
 	height: 100%;
 }
+
 #vasoAligrudic {
 	margin: auto;
 	width: 200px;
@@ -28,6 +32,7 @@ section div {
 	color: var(--gray-3, #828282);
 
 }
+
 #vasoAligrudic span {
 	color: var(--gray-3, #828282);
 
@@ -35,49 +40,55 @@ section div {
 	padding: 0px 10px;
 	font-size: 12px;
 }
+
 #photo {
-	background-image: url("../components/img/Lgphoto.jpg");
+	background-image: url("../../components/img/Lgphoto.jpg");
 	background-size: cover;
 	background-position: center;
 	position: absolute;
 	width: 55%;
 
 }
+
 #inp {
 	background: white;
 	position: absolute;
-	right: 0px;	
+	right: 0px;
 	display: flex;
 	justify-content: center;
-	padding: 50px 5% 0px 5%;	
+	padding: 50px 5% 0px 5%;
 	flex-direction: column;
 	width: 45%;
-text-align: center;
+	text-align: center;
 }
+
 #inp label {
 	text-align: left;
-color: var(--gray-3, #828282);
-font-size: 14px;
-font-weight: 600;
+	color: var(--gray-3, #828282);
+	font-size: 14px;
+	font-weight: 600;
 }
+
 #inp header {
 	display: flex;
 	flex-direction: row;
 	height: 100px;
 	align-items: center;
-	
+
 }
 
 header img {
 	max-width: 70px;
 }
+
 header h1 {
 	font-weight: 700;
-font-size: clamp(0.9375rem, 0.4485rem + 1.8627vw, 2.00rem);
+	font-size: clamp(0.9375rem, 0.4485rem + 1.8627vw, 2.00rem);
 	margin-left: 30px;
 	color: var(--gray-3, #828282);
 
 }
+
 #form {
 	width: 100%;
 	display: flex;
@@ -89,20 +100,20 @@ font-size: clamp(0.9375rem, 0.4485rem + 1.8627vw, 2.00rem);
 #form input {
 	width: 100%;
 	border-radius: 5px;
-border: 1px solid #DED2D9;
-padding: 13px 10px;
+	border: 1px solid #DED2D9;
+	padding: 13px 10px;
 
 }
 
 #form button {
 	border-radius: 6px;
-background: #211E61;
-padding: 13px 10px 12px 10px;
-border: none;
-color: white;
-box-sizing: border-box;
-margin-top: 50px;
-box-sizing: content-box;
+	background: #211E61;
+	padding: 13px 10px 12px 10px;
+	border: none;
+	color: white;
+	box-sizing: border-box;
+	margin-top: 50px;
+	box-sizing: content-box;
 }
 
 Link {
@@ -126,34 +137,42 @@ Link {
 	align-items: center;
 
 }
-#form div p,h5{
+
+#form div p,
+h5 {
 	font-size: 12px;
 }
+
 #form div h5 {
-	
+
 	color: #211E61;
 	font-family: Nunito Sans;
 	font-weight: 700;
 }
+
 #form input[type="checkbox"] {
-	
-	
+
+
 	padding: 0px 0px 0px 0px;
 	width: 12px;
-height: 12px;
+	height: 12px;
 }
+
 @media only screen and (max-width: 1024px) {
 	#photo {
 		width: 50%;
 	}
+
 	#inp {
 		width: 50%;
 	}
 }
+
 @media only screen and (max-width: 900px) {
 	#photo {
 		width: 45%;
 	}
+
 	#inp {
 		width: 55%;
 	}
@@ -163,6 +182,7 @@ height: 12px;
 	#photo {
 		display: none;
 	}
+
 	#inp {
 		width: 100%;
 		padding: 50px 10% 0px 10%;

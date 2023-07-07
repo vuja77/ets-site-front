@@ -17,36 +17,42 @@ nav {
 	justify-content: space-between;
 	background-color: white;
 	text-decoration: none;
-	transition:0.6s;
+	transition: 0.6s;
 }
+
 a {
 	text-decoration: none;
 	color: #000;
-font-size: 16px;
-font-family: Inter;
-font-style: normal;
-font-weight: 400;
+	font-size: 16px;
+	font-family: Inter;
+	font-style: normal;
+	font-weight: 400;
 }
+
 a.active {
-font-weight: 600;
+	font-weight: 600;
 
 }
+
 nav ul {
-	
+
 	justify-self: end;
-	
+
 
 }
+
 nav ul li {
 	display: inline-flex;
 	margin-right: 25px;
 	text-decoration: none;
 
 }
+
 nav ul li a#activePage {
 	font-weight: 700;
 	font-style: bold;
 }
+
 nav img {
 	width: 50px;
 	height: 50px;
@@ -63,18 +69,22 @@ nav button {
 	color: white;
 
 }
+
 #Hambuger {
 	display: none;
 }
+
 #Hambuger button {
 	background: none;
 	color: #000;
 	width: 30px;
 	padding: 12px 0px;
 }
+
 #Hambuger button #close {
 	display: none;
 }
+
 #Hambuger button #bars {
 	display: block;
 }
@@ -82,10 +92,12 @@ nav button {
 #Hambuger button.active #close {
 	display: block;
 }
+
 #Hambuger button.active #bars {
 	display: none;
-	
+
 }
+
 #MobileMeni {
 	display: none;
 	transition: 0.6s;
@@ -93,44 +105,52 @@ nav button {
 }
 
 #MobileMeni.active {
-display: flex;
+	display: flex;
 
-transform: translateY(0px);
+	transform: translateY(0px);
 }
+
 @media only screen and (max-width: 768px) {
 	nav ul li {
 		display: none;
 	}
+
 	nav {
 		padding-left: 30px;
 	}
-	ul li#Hambuger,#Login {
+
+	ul li#Hambuger,
+	#Login {
 		display: inline;
 		vertical-align: middle;
-		
+
 	}
+
 	ul li#Hambuger {
 		height: 40px;
-		
+
 	}
+
 	nav.active {
 		height: 130px;
-		
+
 	}
+
 	#MobileMeni {
 		position: absolute;
-		
+
 		height: 300px;
 		width: 100%;
 		top: 90px;
 		z-index: 222;
 	}
+
 	nav #MobileMeni li {
 		display: inline-flex;
 		justify-content: center;
 		margin-top: 0px;
 	}
-	
+
 }
 
 
