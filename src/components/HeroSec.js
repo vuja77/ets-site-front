@@ -4,7 +4,7 @@ import Ig from ".././components/img/image 9.png";
 import Facebook from ".././components/img/image 10.png";
 import Mail from ".././components/img/image 11.png";
 import youtube from ".././components/img/image 12.png";
-
+import { Link } from "react-router-dom";
 function HeroSec() {
   return (
     <>
@@ -20,7 +20,7 @@ function HeroSec() {
     </section>
       <div className="socialNetwork">
         <h2>Socijalne Mreže</h2>
-          <img src={Ig}/>
+         <Link to="https://www.instagram.com/elektrotehnicka_skola_pg/"><img src={Ig}/></Link> 
           <img src={Facebook}/>
           <img src={Mail}/>
           <img src={youtube}/>
