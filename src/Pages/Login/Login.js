@@ -1,10 +1,14 @@
 import "./Login.css";
 import Logo from "../../components/img/logo.svg";
 import { Link } from "react-router-dom";
-
+import Cookies from 'universal-cookie';
 function Login() {
+	
+	const cookies = new Cookies();
+	cookies.set('Login', "d", { path: '/' });
+	console.log(cookies.get('myCat'));
 	return (
-		<section>
+		<section className="Login">
 			<div id="photo">
 
 			</div>
@@ -34,7 +38,7 @@ function Login() {
 						<h5>Zaboravili ste loinku?</h5>
 					</div>
 
-					<button>Login</button>
+					<button onClick={() => console.log("dd")}>Login</button>
 					<h4>Nemate nalog? <Link to="/register">Registruj se</Link></h4>
 				</div>
 			</div>

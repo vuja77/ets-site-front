@@ -6,6 +6,7 @@ section.Hero-Sec {
   padding-left: 5%;
   height: 100%;
   padding-top: 150px;
+  padding-right: 5%;
 }
 
 section.Hero-Sec div#Hero-text {
@@ -68,4 +69,57 @@ section.Hero-Sec div#Hero-text p {
 
 .socialNetwork img {
   width: clamp(5rem, 8.75vw + 2.2rem, 19rem);
+}
+.socialNetworkMb {
+  display: none;
+  padding-left: 30px;
+  flex-direction: row;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+div#Hero-photoMb {
+  width: 21%;
+  display: flex;
+  justify-content: center;
+}
+
+#Hero-photoMb img {
+  margin-right: 50px;
+  width: 50%;
+  border-radius: 10px;
+  z-index: 2;
+  position: relative;
+}
+
+@media only screen and (max-width: 768px) {
+  #Hero-photo {
+    display: none;
+  }
+  .Hero-Sec {
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+  }
+  section.Hero-Sec div#Hero-text h1{
+    font-size: 45px;
+  }
+  section.Hero-Sec div#Hero-text p {
+    font-size: 17px;
+    max-width: 97%;
+    margin-top: 20px;
+}
+  section.Hero-Sec div#Hero-photo, section.Hero-Sec div#Hero-text {
+    width: 100%;
+  }
+  .socialNetwork {
+    display: none;
+  }
+  .socialNetworkMb {
+    display: flex;
+    padding-left: 30px;
+    flex-direction: row;
+    gap: 30px;
+    margin-top: 20px;
+  }
 }

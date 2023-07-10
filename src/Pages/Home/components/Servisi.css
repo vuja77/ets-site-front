@@ -1,6 +1,6 @@
 body {
 	overflow-x: hidden;
-	margin-right: 50px;
+	margin-right: 0px;
 }
 
 section#servisi {
@@ -111,7 +111,7 @@ section#servisi h1 {
 
 @media only screen and (max-width: 900px) {
 	body {
-		margin-right: 20px;
+	
 	}
 
 	section#servisi {

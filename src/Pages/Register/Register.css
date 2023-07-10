@@ -9,15 +9,20 @@
 	box-sizing: border-box;
 }
 
-section.Login {
+nav {
+	display: block;
+}
+
+section.Register  {
 	display: flex;
 	justify-content: space-between;
 	flex-direction: row;
 }
 
-section.Login div {
-	box-sizing: border-box;
-	height: 100%;
+section.Register div {
+	height: 100vh;
+	
+	
 }
 
 #vasoAligrudic {
@@ -37,19 +42,17 @@ section.Login div {
 	font-size: 12px;
 }
 
-section.Login #photo {
+ #photo {
 	background-image: url("../../components/img/Lgphoto.jpg");
 	background-size: cover;
 	background-position: center;
-	position: absolute;
+	
 	width: 55%;
 
 }
 
-section.Login #inp {
+section.Register #inp {
 	background: white;
-	position: absolute;
-	right: 0px;
 	display: flex;
 	justify-content: center;
 	padding: 50px 5% 0px 5%;
@@ -68,9 +71,10 @@ section.Login #inp {
 #inp header {
 	display: flex;
 	flex-direction: row;
+	
 	height: 100px;
 	align-items: center;
-
+	text-align: center;
 }
 
 header img {
@@ -85,37 +89,36 @@ header h1 {
 
 }
 
-#form {
+section.Register  #form {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	gap: 23px;
-	margin-top: 120px;
+	margin-top: 70px;
 }
 
-#form input {
+#form input, select {
 	width: 100%;
 	border-radius: 5px;
 	border: 1px solid #DED2D9;
 	padding: 13px 10px;
 
 }
-
+#form div.twoInp {
+	padding: 25px 0px 25px 0px;
+}
+#form div.twoInp label {
+	width: 47%;
+}
 #form button {
 	border-radius: 6px;
 	background: #211E61;
 	padding: 13px 10px 12px 10px;
 	border: none;
 	color: white;
-	box-sizing: border-box;
+	
 	margin-top: 50px;
 	box-sizing: content-box;
-}
-
-Link {
-	text-decoration: none;
-	color: red;
-	border: none;
 }
 
 #form h4 {
@@ -124,8 +127,8 @@ Link {
 	align-self: bottom;
 }
 
-section.Login #form div {
-	display: inline-flex;
+#form div {
+	display: flex;
 	flex-direction: row;
 	width: 100%;
 	height: 20px;
@@ -133,34 +136,25 @@ section.Login #form div {
 	align-items: center;
 
 }
-
-#form div p,
-h5 {
+#form div p, h5 {
 	font-size: 12px;
 }
 
 #form div h5 {
-
 	color: #211E61;
 	font-family: Nunito Sans;
 	font-weight: 700;
 }
 
-#form input[type="checkbox"] {
 
-
-	padding: 0px 0px 0px 0px;
-	width: 12px;
-	height: 12px;
-}
 
 @media only screen and (max-width: 1024px) {
 	#photo {
 		width: 50%;
 	}
 
-	section.Login #inp {
-		width: 50%;
+	section.Register #inp {
+		width: 55%;
 	}
 }
 
@@ -169,7 +163,7 @@ h5 {
 		width: 45%;
 	}
 
-	section.Login #inp {
+	section.Register #inp {
 		width: 55%;
 	}
 }
@@ -179,7 +173,7 @@ h5 {
 		display: none;
 	}
 
-	section.Login #inp {
+	section.Register #inp {
 		width: 100%;
 		padding: 50px 10% 0px 10%;
 	}

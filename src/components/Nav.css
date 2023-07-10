@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap');
 
 nav {
 	width: 100%;
@@ -6,11 +6,11 @@ nav {
 	top: 0px;
 	height: 70px;
 
-	padding-left: 50px;
+	padding-left: 0px;
 	padding-top: 10px;
 	padding-bottom: 30px;
 	align-items: top;
-	z-index: 3;
+	z-index: 66;
 	vertical-align: top;
 	flex-direction: row;
 	display: inline-flex;
@@ -58,7 +58,7 @@ nav img {
 	height: 50px;
 	justify-items: left;
 	display: inline-block;
-
+	margin-left: 50px;
 }
 
 nav button {
@@ -99,15 +99,18 @@ nav button {
 }
 
 #MobileMeni {
-	display: none;
+	display: flex;
+	background-color: white;
 	transition: 0.6s;
-	transform: translateY(-300px);
+	display: flex;
+	flex-direction: column;
+	transform: translateY(-500px);
 }
 
 #MobileMeni.active {
-	display: flex;
 
 	transform: translateY(0px);
+	
 }
 
 @media only screen and (max-width: 768px) {
@@ -115,12 +118,11 @@ nav button {
 		display: none;
 	}
 
-	nav {
-		padding-left: 30px;
-	}
 
-	ul li#Hambuger,
-	#Login {
+	nav img {
+		margin-left: 30px;
+	}
+	ul li#Hambuger, #Login {
 		display: inline;
 		vertical-align: middle;
 
@@ -131,26 +133,30 @@ nav button {
 
 	}
 
-	nav.active {
-		height: 130px;
-
-	}
+	
 
 	#MobileMeni {
-		position: absolute;
-
-		height: 300px;
+		position: fixed;
+		
+		height: 220px;
 		width: 100%;
-		top: 90px;
-		z-index: 222;
+		top: 70px;
+		z-index: 5;
+		
 	}
 
-	nav #MobileMeni li {
-		display: inline-flex;
+	 #MobileMeni li {
+		display: block;
 		justify-content: center;
 		margin-top: 0px;
+		padding: 15px 25px;
+		
 	}
-
+	 #MobileMeni li.active, li.active a {
+		background-color: #ededed;
+		color:  #211E61;
+;
+	}
 }
 
 

@@ -25,8 +25,10 @@ function Nav() {
           </li>
         </ul>
 
-        <ul id="MobileMeni" className={activeMeni === "2" ? "active" : ""}>
-          <li>
+        
+      </nav>
+      <ul id="MobileMeni" className={activeMeni === "2" ? "active" : ""}>
+          <li class="active">
             <Link to="/" id="active">Home</Link>
           </li>
           <li>
@@ -39,7 +41,6 @@ function Nav() {
             <Link to="/Login">Servisi</Link>
           </li>
         </ul>
-      </nav>
       <Outlet />
     </>
   )
