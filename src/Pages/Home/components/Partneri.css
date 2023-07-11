@@ -156,7 +156,6 @@ section.partneri h2 {
 	section.partneri .cont div:nth-child(2) p {
 		width: 45vw;
 		font-size: 9px;
-		
 	}
 	section.partneri .circle {
 		width: 70px;
@@ -166,7 +165,6 @@ section.partneri h2 {
 		margin-left: 10px;
 	}section.partneri .cont div:nth-child(2) p,
 	.dots {
-	
 		margin-top: 10px;
 	}
 }
