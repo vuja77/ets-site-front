@@ -4,10 +4,14 @@ import dots from "../../../components/img/Group 70.svg";
 function Servisi() {
 	return (
 		<section id="servisi">
+			
 			<div>
 				<h1>Šta ti je potrebno?</h1>
+			<div id="bckBox"></div>
+
 			</div>
 			<div className="box">
+			
 				<div className="Srv" id="PrijaviStetu">
 					<div></div>
 					<h3>Prijavi štetu</h3>
@@ -30,7 +34,7 @@ function Servisi() {
 				</div>
 			</div>
 			<div id="grayBox"></div>
-			<div id="bckBox"></div>
+			
 			<img id="dots" src={dots} />
 		</section>
 

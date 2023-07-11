@@ -8,23 +8,24 @@ function Partneri() {
 			id: "cortex",
 			h1: "Cortex Akademija",
 			p: "Cortex akademija predstavlja program edukacije iz oblasti informacionih tehnologija koji implementira ICT Cortex – klaster za informacione tehnologije, inovacije, edukaciju, dizajn i tehnološki razvoj Crne Gore..",
-			dotId: "1",
+			dotId: 1,
 		},
 		{
 			id: "vet4web",
 			h1: "VET for Western Balkans",
 			p: "Cilj V4WB je jačanje saradnje između zemalja Zapadnog Balkana i zemalja članica EU, sve aktivnosti: uspostavljanje zajedničkih radnih grupa, razvoj nastavnog plana i programa, nove strategije, .",
-			dotId: "2",
+			dotId: 2,
 		},
 		{
 			id: "rcf",
 			h1: "Regionalni Challenge Fond",
 			p: "RCF ima za cilj da ojača relevantnost stručnog obrazovanja i obuke  na tržištu rada finansiranjem ulaganja u opremu i infrastrukturu za pružaoce obuke koji se uključuju aktivnosti obuke sa preduzećima.",
-			dotId: "3",
+			dotId: 3,
 		}
 	];
-	let [activeSlide, setSlide] = useState(1);
-
+	const [activeSlide, setSlide] = useState(1);
+	let activeSlideId = "sl" + activeSlide;
+		
 	useEffect(() => {
 		const slideInt = setInterval(() => {
 			if (activeSlide === 3) {
@@ -33,13 +34,13 @@ function Partneri() {
 				setSlide(activeSlide + 1);
 			}
 
-		}, 7000)
+		}, 3000)
 		return () => { clearInterval(slideInt); };
 	})
 	return (
 		<section className="partneri" >
 			<h1>Partneri Elektrotehničke škole</h1>
-			<div className="Slider" id={"sl" + activeSlide}>
+			<div className="Slider" id={activeSlideId}>
 				{SliderItems.map((Slide) => {
 					return (
 						<div className="cont">
@@ -50,7 +51,7 @@ function Partneri() {
 								<div className="dots">
 									{
 										SliderItems.map((Dots) => {
-											return (<button onClick={() => setSlide(Dots.dotId)} className={activeSlide == Dots.dotId ? "active" : ""}></button>);
+											return (<button onClick={() => setSlide(Dots.dotId)} className={activeSlide === Dots.dotId ? "active" : ""}></button>);
 										})
 									}
 								</div>

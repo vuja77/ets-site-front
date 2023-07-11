@@ -1,15 +1,17 @@
 footer {
-	margin-top: 100px;
+	margin-top: 5%;
 	width: 100%;
 	font-family: Inter;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
 	padding-bottom: 7%;
+	padding: 20px;
 }
 
 footer img {
 	width: 90px;
+	
 	padding-right: 30px;
 }
 

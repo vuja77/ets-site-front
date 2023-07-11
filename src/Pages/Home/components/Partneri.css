@@ -2,7 +2,7 @@
 
 section.partneri {
 	max-width: 100%;
-	margin-top: 150px;
+	margin-top: 9%;
 	display: flex;
 	flex-direction: column;
 	text-align: center;
@@ -20,6 +20,7 @@ section.partneri .Slider {
 	flex-direction: row;
 	transition: 1s;
 	height: 100%;
+	margin-top: 40px;
 }
 
 section.partneri .Slider#sl1 {
@@ -46,9 +47,8 @@ section.partneri .cont div:nth-child(1) {
 	background: white;
 	background-size: cover;
 	background-position: center;
-	width: max(30%, 389px);
-	height: 177px;
-	height: 389px;
+	width: 28vw;
+	height: 28vw;
 	border-radius: 500px 0px 500px 500px;
 	box-shadow: 10px 20px 50px 0px rgba(0, 0, 0, 0.15);
 	z-index: 1;
@@ -74,7 +74,8 @@ section.partneri .cont div:nth-child(2) {
 
 section.partneri .cont div:nth-child(2) p,
 .dots {
-	margin-left: 40px;
+	margin-left:40px;
+	margin-top: 20px;
 }
 
 section.partneri .dots button {
@@ -97,60 +98,68 @@ section.partneri .circle {
 	border: 8.8px solid #211E61;
 	position: absolute;
 	border-radius: 50%;
-	margin-top: 280px;
+	margin-top: 22%;
 
 }
 
 section.partneri .cont p {
-	max-width: 400px;
+	max-width: 440px;
+	font-size: 18px;
 }
 
 section.partneri h2 {
 	width: 400px;
-	margin-left: 25px;
+	margin-left:2%;
 	font-size: clamp(0.8125rem, 0.6161rem + 0.9821vw, 1.5rem);
 }
 
 #dot2 {
 	position: absolute;
 	margin-top: -40px;
-	margin-left: 230px;
+	margin-left: 12%;
+	width: 18vw;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 860px) {
 	section.partneri .cont div:nth-child(1) {
-		width: 230px;
-		height: 230px;
+	
 	}
 
 	section.partneri .cont div:nth-child(2) p,
 	.dots {
 		margin-left: 10px;
-		font-size: clamp(10px, 10px, 20px);
+		
 	}
-
+	section.partneri .cont div:nth-child(2) p {
+		width: 45vw;
+		font-size: 13px;
+		
+	}
 	#dot2 {
 		margin-top: -25px;
-		margin-left: 82px;
-		width: 173px;
 	}
 
 	section.partneri .circle {
-		margin-top: 133px;
+		margin-top: 19%;
 	}
 
 	section.partneri {
 		padding-left: 0px;
 	}
+	section.partneri .cont div:nth-child(1) { 
+		width: 33vw;
+		height: 33vw;
+	}
 }
 
 @media only screen and (max-width: 500px) {
-	section.partneri .cont div:nth-child(1) {
-		width: 180px;
-		height: 180px;
+	section.partneri .cont div:nth-child(2) p {
+		width: 45vw;
+		font-size: 9px;
+		
 	}
-
-	#dot2 {
-		width: 120px;
+	section.partneri .circle {
+		width: 70px;
+		height: 70px;
 	}
 }
