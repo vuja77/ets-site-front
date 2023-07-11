@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;0,700;0,800;1,600;1,700;1,800&display=swap');
 
 section.Hero-Sec {
   display: flex;
@@ -43,7 +43,7 @@ section.Hero-Sec div#Hero-text h1 {
   font-size: clamp(1.25rem, 0.4798rem + 2.4648vw, 3.4375rem);
   font-family: Poppins;
   font-style: italic;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 section.Hero-Sec div#Hero-text h1 span {
