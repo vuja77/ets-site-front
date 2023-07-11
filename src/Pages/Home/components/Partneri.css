@@ -116,7 +116,7 @@ section.partneri h2 {
 #dot2 {
 	position: absolute;
 	margin-top: -40px;
-	margin-left: 12%;
+	margin-left: 18%;
 	width: 18vw;
 }
 
@@ -161,5 +161,12 @@ section.partneri h2 {
 	section.partneri .circle {
 		width: 70px;
 		height: 70px;
+	}
+	section.partneri .cont div:nth-child(2) {
+		margin-left: 10px;
+	}section.partneri .cont div:nth-child(2) p,
+	.dots {
+	
+		margin-top: 10px;
 	}
 }
