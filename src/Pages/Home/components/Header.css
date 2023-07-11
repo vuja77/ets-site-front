@@ -54,7 +54,7 @@ section.Hero-Sec div#Hero-text h1 span {
 
 section.Hero-Sec div#Hero-text p {
   font-size: clamp(0.625rem, 0.3169rem + 0.9859vw, 1.5rem);
-  max-width: 370px;
+  max-width: 36vw;
   margin-top: 20px;
 }
 
@@ -63,7 +63,7 @@ section.Hero-Sec div#Hero-text p {
   justify-content: space-evenly;
   flex-direction: row;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 75px;
 }
 
 .socialNetwork h2 {
