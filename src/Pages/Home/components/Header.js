@@ -42,7 +42,7 @@ function Header() {
        <Link to="https://instagram.com/elektrotehnicka_skola_pg"><FontAwesomeIcon icon={faInstagram} color="#211E61"/></Link> 
        <Link to="https://www.facebook.com/elektropg"><FontAwesomeIcon icon={faFacebook} color="#211E61"/></Link> 
        <Link to="https://gmail.com/skola@ets-pg.edu.me"><FontAwesomeIcon icon={faEnvelope} color="#211E61"/></Link> 
-       <Link to="https://www.youtube.com/elektropg"><FontAwesomeIcon icon={faYoutube} color="#211E61"/></Link> 
+       <Link to="https://youtube.com/@elektropg1946"><FontAwesomeIcon icon={faYoutube} color="#211E61"/></Link> 
       </div>
       <img id="mbPhoto"src={Skola} />
 

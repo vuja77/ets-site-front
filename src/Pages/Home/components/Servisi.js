@@ -15,11 +15,11 @@ function Servisi() {
 				<div className="Srv" id="PrijaviStetu">
 					<div></div>
 					<h3>Prijavi štetu</h3>
-					<p>sacuvaj skolu i Prijavi stetu</p>
+					<p>Sačuvaj školu i Prijavi štetu</p>
 				</div>
 				<div className="Srv" id="Lms">
 					<div></div>
-					<h3>Lms</h3>
+					<h3>LMS</h3>
 					<p>Budi i ti u timu</p>
 				</div>
 				<div className="Srv" id="Obavjestenja">
@@ -29,7 +29,7 @@ function Servisi() {
 				</div>
 				<div className="Srv" id="ZastoCutis">
 					<div></div>
-					<h3>Zasto cutis</h3>
+					<h3>Zašto ćutis</h3>
 					<p>Pobijedi sebe i reci  zašto ćutiš</p>
 				</div>
 			</div>
