@@ -29,7 +29,7 @@ function Servisi() {
 				</div>
 				<div className="Srv" id="ZastoCutis">
 					<div></div>
-					<h3>Zašto ćutis</h3>
+					<h3>Zašto ćutiš</h3>
 					<p>Pobijedi sebe i reci  zašto ćutiš</p>
 				</div>
 			</div>
