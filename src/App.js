@@ -3,7 +3,6 @@ import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
 import Nav from "./components/Nav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 function App() {
   return (
     <BrowserRouter>
