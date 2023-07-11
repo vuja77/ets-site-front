@@ -1,7 +1,8 @@
 import "./Partneri.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Dot2 from "../../../components/img/Dot2.svg";
-
+import * as Scroll from 'react-scroll';
+import { useSyncExternalStore } from 'react';
 function Partneri() {
 	const SliderItems = [
 		{
@@ -21,50 +22,69 @@ function Partneri() {
 			h1: "Regionalni Challenge Fond",
 			p: "RCF ima za cilj da ojača relevantnost stručnog obrazovanja i obuke  na tržištu rada finansiranjem ulaganja u opremu i infrastrukturu za pružaoce obuke koji se uključuju aktivnosti obuke sa preduzećima.",
 			dotId: 3,
+		},
+		{
+			id: "amplitudo",
+			h1: "Amplitudo",
+			p: "Za nas, ovo nije kompanija, već način života, ciklus koji započinje regrutovanjem ljudi i ideja u kojem su obučavani i ohrabreni da budu kreativni i maštoviti, a završava nizom proizvoda koji oblikuju tu maštu u funkcionalnost koja u konačnom- mijenja svijet oko nas.",
+			dotId: 4,
 		}
 	];
 	const [activeSlide, setSlide] = useState(1);
-	let activeSlideId = "sl" + activeSlide;
-		
+	const ref = useRef(null);
+	let windowSize = useRef(window.innerWidth);
+	
 	useEffect(() => {
 		const slideInt = setInterval(() => {
-			if (activeSlide === 3) {
+			if (activeSlide === SliderItems.length) {
+				ref.current.scrollLeft -= 4000;
 				setSlide(1);
 			} else {
-				setSlide(activeSlide + 1);
+				ref.current.scrollLeft += windowSize.current;
+				setSlide(activeSlide +1);
 			}
-
-		}, 3000)
-		return () => { clearInterval(slideInt); };
+		}, 7000)
+		return () => { clearInterval(slideInt);};
 	})
+	
+	const scroll = (DotId) => {
+		if(DotId === 1) {
+			ref.current.scrollLeft = 0;
+		} else {
+			ref.current.scrollLeft = windowSize.current * (DotId-1);
+		}
+		setSlide(DotId);
+	  };
+	
 	return (
 		<section className="partneri" >
 			<h1>Partneri Elektrotehničke škole</h1>
-			<div className="Slider" id={activeSlideId}>
+			<div  className="Slider"  ref={ref}>
 				{SliderItems.map((Slide) => {
 					return (
 						<div className="cont">
-							<div id={Slide.id}></div>
-							<div>
+							<div id="PartnerBox">
+								<div id={Slide.id} className="PartnerLogo"></div>
+								<img id="dotsImg" src={Dot2} />
+								<div className="circle"></div>
+							</div>
+							<div className="PartnerText">
 								<h2>{Slide.h1}</h2>
 								<p>{Slide.p}</p>
-								<div className="dots">
-									{
-										SliderItems.map((Dots) => {
-											return (<button onClick={() => setSlide(Dots.dotId)} className={activeSlide === Dots.dotId ? "active" : ""}></button>);
-										})
-									}
-								</div>
 							</div>
-							<img id="dot2" src={Dot2} />
-							<div className="circle"></div>
 						</div>
 					);
 				})}
 			</div>
+			<div className="dots">
+				{
+					SliderItems.map((Dots) => {
+						return (<button onClick={() => scroll(Dots.dotId)} className={activeSlide === Dots.dotId ? "active" : ""}></button>);
+					})
+				}
+			</div>
 		</section>
-	)
-		;
+	);
 }
 
 export default Partneri;

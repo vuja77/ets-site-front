@@ -49,7 +49,7 @@ section.Hero-Sec div#Hero-text h1 {
 section.Hero-Sec div#Hero-text h1 span {
   font-family: Poppins;
   color: #211E61;
-  filter: drop-shadow(3px 3px 1px #ffff);
+
 }
 
 section.Hero-Sec div#Hero-text p {
@@ -63,7 +63,7 @@ section.Hero-Sec div#Hero-text p {
   justify-content: space-evenly;
   flex-direction: row;
   align-items: center;
-  margin-top: 75px;
+  margin-top: 75gotpx;
 }
 
 .socialNetwork h2 {

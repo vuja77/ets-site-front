@@ -2,17 +2,14 @@ body {
 	overflow-x: hidden;
 	margin-right: 0px;
 }
-
 section#servisi {
 	width: 100vw;
-
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
-	margin-top: 70px;
+	margin-top:140px;
 	align-items: center;
 }
-
 section#servisi h1 {
 	font-size: clamp(1.225rem, 0.8321rem + 1.9643vw, 2.5rem);
 	z-index: 1;
@@ -102,7 +99,7 @@ section#servisi h1 {
 	background-image: url("../../../components/img/obvj.png");
 }
 
-#dots {
+#dotsImg1 {
 	position: absolute;
 	top: 100%;
 	margin-top: 700px;
@@ -133,7 +130,7 @@ section#servisi h1 {
 		top: -65px;
 		left: -30px;
 	}
-	#dots {
+	#dotsImg1 {
 		display: none;
 	}
 }
