@@ -32,7 +32,7 @@ footer div.container div {
 }
 
 footer h3 {
-	font-size: clamp(0.55rem, 0.2786rem + 0.3571vw, 1.25rem);
+	font-size: clamp(0.55rem, 0.6796rem + 0.3571vw, 1.25rem);
 }
 
 footer p, a {

@@ -1,4 +1,4 @@
-import "./Servisi.scss";
+import "./Servisi.css";
 import dots from "../../../components/img/Group 70.svg";
 import { motion } from "framer-motion"
 
