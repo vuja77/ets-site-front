@@ -1,8 +1,6 @@
 import "./Partneri.css";
 import { useState, useEffect, useRef } from "react";
 import Dot2 from "../../../components/img/Dot2.svg";
-import * as Scroll from 'react-scroll';
-import { useSyncExternalStore } from 'react';
 function Partneri() {
 	const SliderItems = [
 		{
@@ -54,12 +52,15 @@ function Partneri() {
 			ref.current.scrollLeft = windowSize.current * (DotId-1);
 		}
 		setSlide(DotId);
-	  };
-	
+	};
+	const scrollPosition = () => {
+		let slideNumber = (Math.round((ref.current.scrollLeft) / windowSize.current));
+		setSlide(slideNumber + 1);
+	}
 	return (
 		<section className="partneri" >
 			<h1>Partneri Elektrotehničke škole</h1>
-			<div  className="Slider"  ref={ref}>
+			<div  onScroll={() => scrollPosition()}className="Slider"  ref={ref}>
 				{SliderItems.map((Slide) => {
 					return (
 						<div className="cont">
