@@ -1,6 +1,5 @@
 import "./Servisi.css";
 import dots from "../../../components/img/Group 70.svg";
-import { motion } from "framer-motion"
 import { LazyMotion, domAnimation, domMax, m } from "framer-motion"
 
 function Servisi() {
@@ -10,10 +9,9 @@ function Servisi() {
 			<div>
 				<h1>Šta ti je potrebno?</h1>
 			<div id="bckBox"></div>
-
 			</div>
 			<LazyMotion features={domAnimation} strict>
-			<m.div className="box" transition={{duration: 0.5}}initial={{x: 300}} whileInView={{x: 0}}>
+			<m.div className="box" transition={{type: "spring"}}initial={{x: 300}} whileInView={{x: 0}}>
 			
 				<div className="Srv" id="PrijaviStetu" >
 					<div></div>
