@@ -56,12 +56,14 @@ function Partneri() {
 		} else {
 			ref.current.scrollLeft = ref.current.offsetWidth * (DotId-1);
 		}
-		setSlide(DotId);
+		
 	};
 	const scrollPosition = () => {
 		let slideNumber = (Math.round((ref.current.scrollLeft) / ref.current.offsetWidth));
 		setSlide(slideNumber + 1);
-		
+		if (ref.current.scrollLeft > (ref.current.offsetWidth*3)) {
+			setSlide(SliderItems.length);
+		}
 	}
 	return (
 		<section className="partneri" >

@@ -87,6 +87,10 @@ function Login() {
 						Password
 						<input type="Password" placeholder="Password" />
 					</label>
+                    <label>
+						Confirm Password
+						<input type="Password" placeholder="Password" />
+					</label>
                     <div class="twoInp">
                     <label>
 						Smjer

@@ -12,7 +12,7 @@ function Footer() {
 						<br />
 						Vasa Raičkovića
 						<br />
-						Br 2681000
+						Broj ulice 26 Podgorica 81000
 					</p>
 				</div>
 				<div>

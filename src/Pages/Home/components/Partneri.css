@@ -18,9 +18,10 @@ section.partneri .Slider {
 	padding-bottom: 50px;
 	height: 100%;
 	margin-top: 50px;
-
+	transition: 2s;
 	overflow-x: auto;
 	scroll-snap-type: x mandatory;
+	scroll-snap-stop: always;
 	scroll-behavior: smooth;
 }
 .Slider::-webkit-scrollbar {
