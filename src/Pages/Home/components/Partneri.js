@@ -30,7 +30,6 @@ function Partneri() {
 	];
 	const [activeSlide, setSlide] = useState(1);
 	const ref = useRef(null);
-	let windowSize = useRef(window.innerWidth);
 	
 	useEffect(() => {
 		const slideInt = setInterval(() => {
@@ -38,7 +37,7 @@ function Partneri() {
 				ref.current.scrollLeft -= 4000;
 				setSlide(1);
 			} else {
-				ref.current.scrollLeft += windowSize.current;
+				ref.current.scrollLeft += ref.current.offsetWidth;
 				setSlide(activeSlide +1);
 			}
 		}, 7000)
@@ -49,13 +48,14 @@ function Partneri() {
 		if(DotId === 1) {
 			ref.current.scrollLeft = 0;
 		} else {
-			ref.current.scrollLeft = windowSize.current * (DotId-1);
+			ref.current.scrollLeft = ref.current.offsetWidth * (DotId-1);
 		}
 		setSlide(DotId);
 	};
 	const scrollPosition = () => {
-		let slideNumber = (Math.round((ref.current.scrollLeft) / windowSize.current));
+		let slideNumber = (Math.round((ref.current.scrollLeft) / ref.current.offsetWidth));
 		setSlide(slideNumber + 1);
+		
 	}
 	return (
 		<section className="partneri" >
