@@ -24,7 +24,7 @@ function Footer() {
 					<a href="tel:+382-020-237-120"><p>Tel : (+382) 020 237 120.0 </p></a>
 				</div>
 			</div>
-			<h4>ETS & Amplitudo 2023</h4>
+			<h6>ETŠ & Amplitudo 2023</h6>
 		</footer>
 	);
 

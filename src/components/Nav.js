@@ -4,14 +4,15 @@ import Logo from ".././components/img/logo.svg";
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 function Nav() {
   let [activeMeni, setActive] = useState("1");
-
+  
+ 
   return (
     <>
-      <nav className={activeMeni === "2" ? "active" : ""}>
+      <nav className={activeMeni === "2" ? "active" : ""} >
         <img src={Logo} />
 
         <ul>

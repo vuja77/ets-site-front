@@ -11,7 +11,7 @@ function Servisi() {
 			<div id="bckBox"></div>
 
 			</div>
-			<motion.div className="box" transition={{duration: 1, delay: 0.1}} initial={{x: 300}} whileInView={{ 	x: 0}}>
+			<motion.div className="box" transition={{duration: 1.0}} initial={{x: 300}} whileInView={{x: 0}}>
 			
 				<motion.div className="Srv" id="PrijaviStetu" whileHover={{scale: 1.1}} >
 					<div></div>

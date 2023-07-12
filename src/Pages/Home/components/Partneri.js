@@ -44,13 +44,13 @@ function Partneri() {
 		return () => { clearInterval(slideInt);};
 	})
 	
-	const scroll = (DotId) => {
+	const DotsScroll = (DotId) => {
 		if(DotId === 1) {
 			ref.current.scrollLeft = 0;
 		} else {
 			ref.current.scrollLeft = ref.current.offsetWidth * (DotId-1);
 		}
-		setSlide(DotId);
+		
 	};
 	const scrollPosition = () => {
 		let slideNumber = (Math.round((ref.current.scrollLeft) / ref.current.offsetWidth));
@@ -80,7 +80,7 @@ function Partneri() {
 			<div className="dots">
 				{
 					SliderItems.map((Dots) => {
-						return (<button onClick={() => scroll(Dots.dotId)} className={activeSlide === Dots.dotId ? "active" : ""}></button>);
+						return (<button onClick={() => DotsScroll(Dots.dotId)} className={activeSlide === Dots.dotId ? "active" : ""}></button>);
 					})
 				}
 			</div>
