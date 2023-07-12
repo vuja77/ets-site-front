@@ -11,7 +11,7 @@ function Servisi() {
 			<div id="bckBox"></div>
 			</div>
 			<LazyMotion features={domAnimation} strict>
-			<m.div className="box" transition={{type: "spring"}}initial={{x: 300}} whileInView={{x: 0}}>
+			<m.div className="box" transition={{}}initial={{x: 200}} whileInView={{x: 0}}>
 			
 				<div className="Srv" id="PrijaviStetu" >
 					<div></div>
