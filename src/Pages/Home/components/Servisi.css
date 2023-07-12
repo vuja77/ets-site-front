@@ -22,7 +22,7 @@ section#servisi h1 {
 	grid-template: auto auto / auto auto;
 	column-gap: 30px;
 	z-index: 1;
-
+	will-change: left, sright;
 }
 
 .box div.Srv {

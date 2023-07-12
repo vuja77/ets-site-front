@@ -1,6 +1,7 @@
 import "./Servisi.css";
 import dots from "../../../components/img/Group 70.svg";
 import { motion } from "framer-motion"
+import { LazyMotion, domAnimation, domMax, m } from "framer-motion"
 
 function Servisi() {
 	return (
@@ -11,29 +12,31 @@ function Servisi() {
 			<div id="bckBox"></div>
 
 			</div>
-			<motion.div className="box" transition={{duration: 1, delay: 0.1}} initial={{x: 300}} whileInView={{ 	x: 0}}>
+			<LazyMotion features={domAnimation} strict>
+			<m.div className="box" transition={{duration: 0.5}}initial={{x: 300}} whileInView={{x: 0}}>
 			
-				<motion.div className="Srv" id="PrijaviStetu" whileHover={{scale: 1.1}} >
+				<div className="Srv" id="PrijaviStetu" >
 					<div></div>
 					<h3>Prijavi štetu</h3>
 					<p>Sačuvaj školu i Prijavi štetu</p>
-				</motion.div >
-				<motion.div className="Srv" id="Lms" whileHover={{scale: 1.1}}>
+				</div >
+				<div className="Srv" id="Lms">
 					<div></div>
 					<h3>LMS</h3>
 					<p>Budi i ti u timu</p>
-				</motion.div>
-				<motion.div className="Srv" id="Obavjestenja" whileHover={{scale: 1.1}}>
+				</div>
+				<div className="Srv" id="Obavjestenja">
 					<div></div>
 					<h3>Obavještenja</h3>
 					<p>Budi obavješten o svemu</p>
-				</motion.div>
-				<motion.div className="Srv" id="ZastoCutis" whileHover={{scale: 1.1}}>
+				</div>
+				<div className="Srv" id="ZastoCutis">
 					<div></div>
 					<h3>Zašto ćutiš</h3>
 					<p>Pobijedi sebe i reci  zašto ćutiš</p>
-				</motion.div>
-			</motion.div>
+				</div>
+			</m.div>
+			</LazyMotion>
 			<div id="grayBox"></div>
 			
 			<img id="dotsImg1" src={dots} />

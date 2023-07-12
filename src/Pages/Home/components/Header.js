@@ -11,25 +11,29 @@ import { SocialIcon } from 'react-social-icons';
 import {faEnvelope} from "@fortawesome/free-solid-svg-icons"
 import { faFacebook, faInstagram, faMailchimp, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { motion } from "framer-motion"
+
+import { LazyMotion, domAnimation, domMax, m } from "framer-motion"
 
 function Header() {
   return (
     <>
       <section className="Hero-Sec">
-       
-          <motion.div id="Hero-text" animate={{x: [-300, 0]}} transition={{duration: 1}}>
+      <LazyMotion features={domAnimation} >
+          <m.div id="Hero-text" animate={{x: [-300, 0]}} transition={{duration: 0.6}}>
             <h1>Elektrotehnička škola <br /><span>“Vaso Aligrudic”</span></h1>
 
             <p> Elektrotehnička škola igra važnu ulogu u razvoju tehnologije i inovacija. Učenici koji pohađaju ovu školu mogu da razviju nove ideje i tehnologije koje mogu da pomognu u rešavanju problema u društvu i industriji.</p>
             <img id="dotsHeader" src={dots}/> 
-          </motion.div>
+          </m.div>
+          </LazyMotion>
+          <LazyMotion features={domAnimation} >
           
-          
-          <motion.div id="Hero-photo" animate={{x: [300, 0]}} transition={{duration: 1}}>
+          <m.div id="Hero-photo" animate={{x: [300, 0]}} transition={{duration: 0.6}}>
             <span id="circle1"></span>
             <img src={Skola} />
-          </motion.div>
+          </m.div>
+          </LazyMotion>
+
         </section>
 
         <div className="socialNetwork">
@@ -46,7 +50,10 @@ function Header() {
        <Link to="https://gmail.com/skola@ets-pg.edu.me"><FontAwesomeIcon icon={faEnvelope} color="#211E61"/></Link> 
        <Link to="https://youtube.com/@elektropg1946"><FontAwesomeIcon icon={faYoutube} color="#211E61"/></Link> 
       </div>
-      <motion.img id="mbPhoto"src={Skola}  animate={{x: [300, 0]}} transition={{duration: 1}}/>
+      <LazyMotion features={domAnimation} >
+
+      <m.img id="mbPhoto"src={Skola}  animate={{x: [300, 0]}} transition={{duration: 1}}/>
+      </LazyMotion>
 
     </>
   );
