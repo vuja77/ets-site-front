@@ -40,7 +40,10 @@ section.partneri .cont {
 	justify-content: center;
 	align-items: center;
 }
-section.partneri .cont  div.PartnerLogo {
+section.partneri .cont  a {
+	z-index: 8;
+}
+section.partneri .cont  a div.PartnerLogo {
 	background: white;
 	background-size: cover;
 	background-position: center;
