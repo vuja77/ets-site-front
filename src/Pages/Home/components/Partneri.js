@@ -71,7 +71,7 @@ function Partneri() {
 					return (
 						<div className="cont">
 							<div id="PartnerBox">
-								<Link to={Slide.link}><div id={Slide.id} className="PartnerLogo"></div></Link>
+								<Link target="_blank" to={Slide.link}><div id={Slide.id} className="PartnerLogo"></div></Link>
 								<img id="dotsImg" src={Dot2} />
 								<div className="circle"></div>
 							</div>
