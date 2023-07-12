@@ -2,6 +2,7 @@ import "./Register.css";
 import Logo from "../../components/img/logo.svg";
 import { Link } from "react-router-dom";
 import Select from 'react-select'
+import {motion} from "framer-motion"
 function Login() {
     const PolOptions = [
         {
@@ -50,11 +51,17 @@ function Login() {
           
       ]
 	return (
-		<section className="Register">
+		<motion.section 
+		initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.6 }}
+		 className="Register">
 			
 			<div id="inp">
 				<header>
-					<img src={Logo} />
+                <Link to="/"><img src={Logo} /></Link>
+
 					<h1>Kreiraj nalog</h1>
 				</header>
 
@@ -119,7 +126,7 @@ function Login() {
             <div id="photo">
                 
 			</div>
-		</section>
+		</motion.section>
 	);
 }
 

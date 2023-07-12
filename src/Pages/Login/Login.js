@@ -1,20 +1,24 @@
 import "./Login.css";
 import Logo from "../../components/img/logo.svg";
 import { Link } from "react-router-dom";
-import Cookies from 'universal-cookie';
+import {motion} from "framer-motion"
 function Login() {
 	
-	const cookies = new Cookies();
-	cookies.set('Login', "d", { path: '/' });
-	console.log(cookies.get('myCat'));
+
 	return (
-		<section className="Login">
-			<div id="photo">
+		<motion.section 
+		initial={{ opacity: 0 }}
+		animate={{ opacity: 1 }}
+		exit={{ opacity: 0 }}
+		transition={{ duration: 0.6 }}
+			className="Login"
+		>
+	<div id="photo">
 
 			</div>
 			<div id="inp">
 				<header>
-					<img src={Logo} />
+					<Link to="/"><img src={Logo} /></Link>
 					<h1>Prijavi se na svoj profil</h1>
 				</header>
 
@@ -42,7 +46,8 @@ function Login() {
 					<h4>Nemate nalog? <Link to="/register">Registruj se</Link></h4>
 				</div>
 			</div>
-		</section>
+			
+		</motion.section>
 	);
 }
 

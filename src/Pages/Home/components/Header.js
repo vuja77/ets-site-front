@@ -28,7 +28,7 @@ function Header() {
           </LazyMotion>
           <LazyMotion features={domAnimation} >
           
-          <m.div id="Hero-photo" animate={{x: [300, 0]}} transition={{duration: 0.6}}>
+          <m.div id="Hero-photo" animate={{x: [300, 0]}} transition={{ duration: 0.6}}>
             <span id="circle1"></span>
             <img src={Skola} />
           </m.div>

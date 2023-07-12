@@ -12,7 +12,7 @@
 section.Login {
 	display: flex;
 	justify-content: space-between;
-	flex-direction: row;
+	flex-direction: row-reverse;
 }
 
 section.Login div {
@@ -38,10 +38,8 @@ section.Login div {
 }
 
 section.Login #photo {
-	background-image: url("../../components/img/Lgphoto.jpg");
-	background-size: cover;
-	background-position: center;
 	position: absolute;
+	left: 0px;
 	width: 55%;
 
 }
