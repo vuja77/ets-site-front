@@ -1,4 +1,4 @@
-import "./Login.css";
+import "./Login.scss";
 import Logo from "../../components/img/logo.svg";
 import { Link } from "react-router-dom";
 import {motion} from "framer-motion"

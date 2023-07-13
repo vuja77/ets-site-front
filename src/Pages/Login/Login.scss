@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap');
+$etsBlue: #211E61;
+$gray: #828282;
+* {
+	padding: 0px;
+	margin: 0px;
+	font-family: Nunito Sans;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+section.Login {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row-reverse;
+	div {
+		box-sizing: border-box;
+		height: 100%;
+	}
+	#photo {
+		position: absolute;
+		left: 0px;
+		width: 55%;
+	}
+
+	#inp {
+		background: white;
+		position: absolute;
+		right: 0px;
+		display: flex;
+		justify-content: center;
+		padding: 50px 5% 0px 5%;
+		flex-direction: column;
+		width: 45%;
+		text-align: center;
+		header {
+			display: flex;
+			flex-direction: row;
+			height: 100px;
+			align-items: center;
+			img {
+				max-width: 70px;
+			}
+			h1 {
+				font-weight: 700;
+				font-size: clamp(0.9375rem, 0.4485rem + 1.8627vw, 2.00rem);
+				margin-left: 30px;
+				color: $gray;
+			
+			}
+		}
+		
+		label {
+			text-align: left;
+			color: $gray;
+			font-size: 14px;
+			font-weight: 600;
+		}
+	}
+}
+
+
+
+#vasoAligrudic {
+	margin: auto;
+	width: 200px;
+	border-bottom: 1px dashed gray;
+	line-height: 0.1em;
+	color: $gray;
+	span {
+		color: $gray;
+
+		background: white;
+		padding: 0px 10px;
+		font-size: 12px;
+	}
+}
+
+
+#form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 23px;
+	margin-top: 120px;
+	input {
+		width: 100%;
+		border-radius: 5px;
+		border: 1px solid #DED2D9;
+		padding: 13px 10px;
+	
+	}
+	button {
+		border-radius: 6px;
+		background: $etsBlue;
+		padding: 13px 10px 12px 10px;
+		border: none;
+		color: white;
+		box-sizing: border-box;
+		margin-top: 50px;
+		box-sizing: content-box;
+	}
+	h4 {
+		color: $gray;
+		margin-top: 30px;
+		align-self: bottom;
+	}
+	div {
+		display: inline-flex;
+		flex-direction: row;
+		width: 100%;
+		height: 20px;
+		justify-content: space-between;
+		align-items: center;
+		p,h5 {
+			font-size: 12px;
+		}
+		h5 {
+
+			color: $etsBlue;
+			font-family: Nunito Sans;
+			font-weight: 700;
+		}
+		input[type="checkbox"] {
+
+
+			padding: 0px 0px 0px 0px;
+			width: 12px;
+			height: 12px;
+		}
+	}
+	
+}
+
+
+
+Link {
+	text-decoration: none;
+	color: red;
+	border: none;
+}
+
+
+@media only screen and (max-width: 1024px) {
+	#photo {
+		width: 50%;
+	}
+
+	section.Login #inp {
+		width: 50%;
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	#photo {
+		width: 45%;
+	}
+
+	section.Login #inp {
+		width: 55%;
+	}
+}
+
+@media only screen and (max-width: 692px) {
+	#photo {
+		display: none;
+	}
+
+	section.Login #inp {
+		width: 100%;
+		padding: 50px 10% 0px 10%;
+	}
+}

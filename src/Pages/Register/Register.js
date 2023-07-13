@@ -3,6 +3,7 @@ import Logo from "../../components/img/logo.svg";
 import { Link } from "react-router-dom";
 import Select from 'react-select'
 import {motion} from "framer-motion"
+import { useState, useEffect } from "react";
 function Login() {
     const PolOptions = [
         {
@@ -46,10 +47,20 @@ function Login() {
             },
             {
                 value: "S1D",
-            },
-            
-          
-      ]
+            }, 
+        ]
+        const [classes, setClasess] = useState([]);
+
+  useEffect(() => {
+    const ClassFetch = async () => {
+      const className = await (
+        await fetch("http://localhost:8000/api/classes")
+      ).json();
+      setClasess(className);
+      console.log(className);
+    };
+    ClassFetch();
+  }, []);
 	return (
 		<motion.section 
 		initial={{ opacity: 0 }}
@@ -105,8 +116,8 @@ function Login() {
 						Odeljenje
 						<select>
                             <option disabled selected >Odeljenje</option>
-                            {OdljOptions.map((Options) => {
-                                return(<option placeholder="Pol" value={Options.value}>{Options.value}</option>)
+                            {classes.map((Options) => {
+                                return(<option placeholder="Odeljenje" value={Options}>{Options}</option>)
                             })}
                         </select>
 					</label>
