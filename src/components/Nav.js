@@ -1,5 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
-import "./Nav.css";
+import "./Nav.scss";
 import Logo from ".././components/img/logo.svg";
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faClose } from '@fortawesome/free-solid-svg-icons';

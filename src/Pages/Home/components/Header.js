@@ -1,4 +1,4 @@
-import "./Header.css";
+import "./Header.scss";
 import Skola from "../../../components/img/skola.jpg";
 import dots from "../../../components/img/Group 70.svg";
 

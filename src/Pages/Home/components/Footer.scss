@@ -1,0 +1,39 @@
+footer {
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: 7%;
+	padding: 20px;
+	margin-top: 5%;
+	font-family: Inter;
+	div.container {
+		padding-bottom: 15px;
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		div {
+			max-width: 300px;
+			padding: 0px 10px 0px 10px;
+		}
+		
+	}
+	img {
+		width: 90px;
+		
+		padding-right: 30px;
+	}
+	h3 {
+		font-size: clamp(0.55rem, 0.6796rem + 0.3571vw, 1.25rem);
+	}
+	p, a {
+		font-size: clamp(0.1175rem, 0.3214rem + 0.5804vw, 1.25rem);
+		line-height: 160%;
+	}
+	h4 {
+		font-size: clamp(0.75rem, 0.6786rem + 0.3571vw, 1.25rem);
+		
+	}
+}

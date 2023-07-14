@@ -1,4 +1,4 @@
-import "./Register.css";
+import "./Register.scss";
 import Logo from "../../components/img/logo.svg";
 import { Link } from "react-router-dom";
 import Select from 'react-select'
@@ -34,24 +34,10 @@ function Login() {
         },
         
       ]
-      const OdljOptions = [
-      
-            {
-                value: "S1A",
-            }, 
-            {
-                value: "S1B",
-            },
-            {
-                value: "S1C",
-            },
-            {
-                value: "S1D",
-            }, 
-        ]
+     
         const [classes, setClasess] = useState([]);
 
-  useEffect(() => {
+ /* useEffect(() => {
     const ClassFetch = async () => {
       const className = await (
         await fetch("http://localhost:8000/api/classes")
@@ -60,7 +46,7 @@ function Login() {
       console.log(className);
     };
     ClassFetch();
-  }, []);
+  }, [])*/
 	return (
 		<motion.section 
 		initial={{ opacity: 0 }}
