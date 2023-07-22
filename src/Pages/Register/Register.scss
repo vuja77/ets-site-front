@@ -85,6 +85,9 @@ section.Register  {
 			border-radius: 5px;
 			border: 1px solid #DED2D9;
 			padding: 13px 10px;
+			&.error {
+				background-color: red;
+			}
 		
 		}
 		div.twoInp {
@@ -100,7 +103,7 @@ section.Register  {
 			border: none;
 			color: white;
 			
-			margin-top: 50px;
+			margin-top: 20px;
 			box-sizing: content-box;
 		}
 		h4 {

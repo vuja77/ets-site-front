@@ -1,4 +1,5 @@
 import Home from "./Pages/Home/Home";
+
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
 import Nav from "./components/Nav";
@@ -19,6 +20,7 @@ function App() {
         </Route>
         <Route path="/" >
           <Route path="register" element={<Register />} />
+      
         </Route>
       </Routes>
     </BrowserRouter>
