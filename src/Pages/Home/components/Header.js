@@ -1,10 +1,10 @@
 import "./Header.scss";
 import Skola from "../../../components/img/skola.jpg";
 import dots from "../../../components/img/Group 70.svg";
-import Ig from "../../../components/img/image 9.png";
-import Facebook from "../../../components/img/image 10.png";
-import Mail from "../../../components/img/image 11.png";
-import youtube from "../../../components/img/image 12.png";
+import Ig from "../../../components/img/instagram.png";
+import Facebook from "../../../components/img/facebook.png";
+import Mail from "../../../components/img/mail.png";
+import youtube from "../../../components/img/youtube.png";
 import { Link } from "react-router-dom";
 import {faEnvelope} from "@fortawesome/free-solid-svg-icons"
 import { faFacebook, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
@@ -35,17 +35,17 @@ function Header() {
 
         <div className="socialNetwork">
           <h2>Socijalne Mreže</h2>
-          <Link to="https://www.instagram.com/elektrotehnicka_skola_pg/" aria-label="Instagram"><img src={Ig} alt="ig"/></Link>
-          <img src={Facebook} alt="fb" />
-          <img src={Mail} alt="mail"/>
-          <img src={youtube} alt="yt"/>
+          <Link to="https://www.instagram.com/elektrotehnicka_skola_pg/" target="_blank" aria-label="Instagram"><img src={Ig} alt="ig"/></Link>
+          <Link to="https://www.facebook.com/elektropg" target="_blank" aria-label="Facebook"><img src={Facebook} alt="fb"/></Link>
+          <Link to="https://gmail.com/skola@ets-pg.edu.me" target="_blank" aria-label="Mail"><img src={Mail} alt="ml"/></Link>
+          <Link to="https://youtube.com/@elektropg1946" target="_blank" aria-label="Youtube"><img src={youtube} alt="https://youtube.com/@elektropg1946"/></Link>
         </div>
     
       <div className="socialNetworkMb">
-       <Link to="https://instagram.com/elektrotehnicka_skola_pg" aria-label="Instagram"><FontAwesomeIcon icon={faInstagram} color="#211E61"/></Link> 
-       <Link to="https://www.facebook.com/elektropg" aria-label="Instagram"><FontAwesomeIcon icon={faFacebook} color="#211E61"/></Link> 
-       <Link to="https://gmail.com/skola@ets-pg.edu.me" aria-label="Instagram"><FontAwesomeIcon icon={faEnvelope} color="#211E61"/></Link> 
-       <Link to="https://youtube.com/@elektropg1946" aria-label="Instagram"><FontAwesomeIcon icon={faYoutube} color="#211E61"/></Link> 
+       <Link to="https://instagram.com/elektrotehnicka_skola_pg" target="_blank" aria-label="Instagram"><FontAwesomeIcon icon={faInstagram} color="#211E61"/></Link> 
+       <Link to="https://www.facebook.com/elektropg" target="_blank" aria-label="Instagram"><FontAwesomeIcon icon={faFacebook} color="#211E61"/></Link> 
+       <Link to="https://gmail.com/skola@ets-pg.edu.me" target="_blank" aria-label="Instagram"><FontAwesomeIcon icon={faEnvelope} color="#211E61"/></Link> 
+       <Link to="https://youtube.com/@elektropg1946" target="_blank" aria-label="Instagram"><FontAwesomeIcon icon={faYoutube} color="#211E61"/></Link> 
       </div>
       <LazyMotion features={domAnimation} >
 

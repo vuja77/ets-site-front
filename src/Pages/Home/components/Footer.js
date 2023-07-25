@@ -10,9 +10,9 @@ function Footer() {
 					<h3>Osnovne informacije</h3>
 					<p>VASO ALIGRUDIĆ
 						<br />
-						Vasa Raičkovića
+						ul. Vasa Raičkovića 26
 						<br />
-						Broj ulice 26 Podgorica 81000
+						Podgorica 81000
 					</p>
 				</div>
 				<div>
@@ -21,10 +21,10 @@ function Footer() {
 				</div>
 				<div>
 					<h3>Kontakt</h3>
-					<a href="tel:+382-020-237-120"><p>Tel : (+382) 020 237 120.0 </p></a>
+					<a href="tel:+382-020-237-120"><p>Tel : <span id="telefon">(+382) 020 237 120</span></p></a>
 				</div>
 			</div>
-			<h6>ETŠ & Amplitudo 2023</h6>
+			<h4>ETS & Amplitudo 2023</h4>
 		</footer>
 	);
 
