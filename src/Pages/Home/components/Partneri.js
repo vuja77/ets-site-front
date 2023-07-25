@@ -1,8 +1,8 @@
 import "./Partneri.scss";
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-
 import Dot2 from "../../../components/img/Dot2.svg";
+
 function Partneri() {
 	const SliderItems = [
 		{
@@ -49,14 +49,12 @@ function Partneri() {
 		}, 7000)
 		return () => { clearInterval(slideInt);};
 	})
-	
 	const scroll = (DotId) => {
 		if(DotId === 1) {
 			ref.current.scrollLeft = 0;
 		} else {
 			ref.current.scrollLeft = ref.current.offsetWidth * (DotId-1);
 		}
-		
 	};
 	const scrollPosition = () => {
 		let slideNumber = (Math.round((ref.current.scrollLeft) / ref.current.offsetWidth));
@@ -69,12 +67,12 @@ function Partneri() {
 		<section className="partneri" >
 			<h1>Partneri Elektrotehničke škole</h1>
 			<div  onScroll={() => scrollPosition()}className="Slider"  ref={ref}>
-				{SliderItems.map((Slide) => {
+				{SliderItems.map((Slide, i) => {
 					return (
-						<div className="cont">
-							<div id="PartnerBox">
-								<Link target="_blank" to={Slide.link}><div id={Slide.id} className="PartnerLogo"></div></Link>
-								<img id="dotsImg" src={Dot2} />
+						<div className="cont" key={i}>
+							<div id="PartnerBox" >
+								<Link target="_blank" to={Slide.link} aria-label="Partners"><div id={Slide.id} className="PartnerLogo"></div></Link>
+								<img id="dotsImg" src={Dot2} alt="dots"/>
 								<div className="circle"></div>
 							</div>
 							<div className="PartnerText">
@@ -87,13 +85,12 @@ function Partneri() {
 			</div>
 			<div className="dots">
 				{
-					SliderItems.map((Dots) => {
-						return (<button onClick={() => scroll(Dots.dotId)} className={activeSlide === Dots.dotId ? "active" : ""}></button>);
+					SliderItems.map((Dots, i) => {
+						return (<button key={i} onClick={() => scroll(Dots.dotId)} className={activeSlide === Dots.dotId ? "active" : ""} aria-label="SliderDot"></button>);
 					})
 				}
 			</div>
 		</section>
 	);
 }
-
 export default Partneri;

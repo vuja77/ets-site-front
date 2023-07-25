@@ -1,11 +1,12 @@
 import "./Login.scss";
 import Logo from "../../components/img/logo.svg";
-import { Link, json } from "react-router-dom";
-import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {motion} from "framer-motion";
 import { useState } from "react";
 import axios from "axios";
 import Cookies from 'universal-cookie';
+import Config from "../../Config";
 function Login() {
 	
 const cookies = new Cookies();
@@ -20,14 +21,14 @@ const HandleInput = (event) => {
 /*Send login request*/
 const LoginRequest = async (event) => {
 	event.preventDefault();
-	await axios.post("http://127.0.0.1:8000/api/login", LoginInputs)
+	await axios.post(Config.apiUrl+"/login", LoginInputs)
 	.then((response) => {
 		console.log(response.data.success.token);
 		/*set token cookie*/
 		const token = response.data.success.token;
 		cookies.set('token', token, { path: '/' });
 		/*redirect to dashboard*/
-		Navigate("/dashboard");
+		Navigate("/");
 	})
 	.catch((error) => {
 		console.log(error);
@@ -39,16 +40,16 @@ const LoginRequest = async (event) => {
 			</div>
 			<form id="inp" autoComplete="on">
 				<header>
-					<Link to="/"><img src={Logo} /></Link>
+					<Link to="/"><img src={Logo} alt="logo"/></Link>
 					<h1>Prijavi se na svoj profil</h1>
 				</header>
 				<h3 id="vasoAligrudic"><span>Vaso Aligrudić</span></h3>
 				<div id="form">
-					<label>
+					<label for="mail">
 						Mail
 						<input name="mail" onChange={HandleInput} type="email" placeholder="Email" />
 					</label>
-					<label>
+					<label for="password">
 						Password
 						<input name="password" onChange={HandleInput} type="password" placeholder="Password" />
 					</label>

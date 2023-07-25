@@ -5,7 +5,7 @@ import Register from "./Pages/Register/Register";
 import Nav from "./components/Nav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import {motion} from "framer-motion"
+
 
 function App() {
   return (

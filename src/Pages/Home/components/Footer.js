@@ -5,7 +5,7 @@ function Footer() {
 	return (
 		<footer>
 			<div className="container">
-				<img src={Logo}></img>
+				<img src={Logo} alt="logo"></img>
 				<div>
 					<h3>Osnovne informacije</h3>
 					<p>VASO ALIGRUDIĆ

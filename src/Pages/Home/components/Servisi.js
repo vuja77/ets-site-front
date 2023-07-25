@@ -1,11 +1,10 @@
 import "./Servisi.scss";
 import dots from "../../../components/img/Group 70.svg";
-import { LazyMotion, domAnimation, domMax, m } from "framer-motion"
+import { LazyMotion, domAnimation, m } from "framer-motion"
 
 function Servisi() {
 	return (
 		<section id="servisi">
-			
 			<div>
 				<h1>Šta ti je potrebno?</h1>
 			<div id="bckBox"></div>
@@ -15,32 +14,29 @@ function Servisi() {
 				
 					<div className="Srv" id="PrijaviStetu" >
 						<div></div>
-						<h3>Prijavi štetu</h3>
+						<strong>Prijavi štetu</strong>
 						<p>Sačuvaj školu i Prijavi štetu</p>
 					</div >
 					<div className="Srv" id="Lms">
 						<div></div>
-						<h3>LMS</h3>
+						<strong>LMS</strong>
 						<p>Budi i ti u timu</p>
 					</div>
 					<div className="Srv" id="Obavjestenja">
 						<div></div>
-						<h3>Obavještenja</h3>
+						<strong>Obavještenja</strong>
 						<p>Budi obavješten o svemu</p>
 					</div>
 					<div className="Srv" id="ZastoCutis">
 						<div></div>
-						<h3>Zašto ćutiš</h3>
+						<strong>Zašto ćutiš</strong>
 						<p>Pobijedi sebe i reci  zašto ćutiš</p>
 					</div>
 				</m.div>
 				</LazyMotion>
 			<div id="grayBox"></div>
-			
-			<img id="dotsImg1" src={dots} />
+			<img id="dotsImg1" src={dots} alt="dots" />
 		</section>
-
 	);
 }
-
 export default Servisi;
