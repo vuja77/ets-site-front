@@ -1,8 +1,12 @@
-import "./Register.css";
+import "./Register.scss";
 import Logo from "../../components/img/logo.svg";
-import { Link } from "react-router-dom";
-import Select from 'react-select'
-function Login() {
+import { Link, useNavigate } from "react-router-dom";
+import {motion} from "framer-motion"
+import { useState, useEffect } from "react";
+import axios from "axios";
+import Cookies from 'universal-cookie';
+import Config from "../../Config";
+function Register() {
     const PolOptions = [
         {
             value: "Muski",
@@ -13,114 +17,103 @@ function Login() {
         {
             value: "Ostalo",
         }
-      ]
-      const SmjerOptions = [
-        {
-            value: "Eektrotehnicar racunarskih sistema i mreza",
-        }, 
-        {
-            value: "Eektrotehnicar elektronskih komunikacija",
-        },
-        {
-            value: "Eektrotehnicar energetike",
-        },
-        {
-            value: "Eektrotehnicar elektronike",
-        },
-        {
-            value: "Eektrotehnicar za razvoj veb i mobilnih aplikcaija",
-        },
-        
-      ]
-      const OdljOptions = [
-      
-            {
-                value: "S1A",
-            }, 
-            {
-                value: "S1B",
-            },
-            {
-                value: "S1C",
-            },
-            {
-                value: "S1D",
-            },
-            
-          
-      ]
+    ]
+const Navigate =useNavigate();
+const cookies = new Cookies();
+const [classes, setClasess] = useState([]);
+const [Edprograms, setEdprograms] = useState([]);
+const [RegisterInputs, setInputs] = useState({});
+
+/*Get inputs value*/
+const HandleInput = (event) => {
+    console.log(RegisterInputs);
+    setInputs({...RegisterInputs, [event.target.name]: event.target.value,});
+}
+/*Send register request*/
+const RegisterRequest = async (event) => {
+    await axios.post(Config.apiUrl+"/register", RegisterInputs)
+    .then((response) => {
+        console.log(response.data.success.token);
+        console.log(response.data.success.message);
+        const token = response.data.success.token;
+		cookies.set('token', token, { path: '/' });
+		Navigate("/");
+    })
+    .catch((error) => {
+       console.log(error);
+    });
+}
+/*GET edprograms i class*/
+useEffect(() => {
+    const ClassFetch = async () => {
+      const className = await (
+        await fetch(Config.apiUrl+"/classes")
+      ).json();
+      setClasess(className);
+      const Ed_programs = await (
+        await fetch(Config.apiUrl+"/ed_programs")
+      ).json();
+      setEdprograms(Ed_programs);
+    };
+    ClassFetch();
+}, [])
+
 	return (
-		<section className="Register">
-			
+		<motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.6 }} className="Register">
 			<div id="inp">
 				<header>
-					<img src={Logo} />
+                    <Link to="/"><img src={Logo} alt="logo"/></Link>
 					<h1>Kreiraj nalog</h1>
 				</header>
-
 				<h3 id="vasoAligrudic"><span>Vaso Aligrudić</span></h3>
+				<div id="form" >
+                    <div className="twoInp">
+                        <label for="firs_name">Ime<input name="first_name" onChange={HandleInput}type="text" placeholder="Ime"/></label>
+                        <label for="last_name">Prezime<input name="last_name" onChange={HandleInput} type="text" placeholder="Prezime" /></label>
+                    </div>	
 
-				<div id="form">
-                    <div class="twoInp">
-                        <label>
-                            Ime
-                            <input type="text" placeholder="Ime" />
-                        </label>
-                        <label>
-                            Prezime
-                            <input type="text" placeholder="Prezime" />
-                        </label>
-                    </div>
-					
-                    <label>
-						Mail
-						<input type="email" placeholder="Email" />
-					</label>
-                    <label>
-						Password
-						<input type="Password" placeholder="Password" />
-					</label>
-                    <div class="twoInp">
-                    <label>
-						Smjer
-						<select>
-                            <option disabled selected >Smjer</option>
-                            {SmjerOptions.map((Options) => {
-                                return(<option placeholder="Pol" value={Options.value}>{Options.value}</option>)
+                    <label for="mail">Mail<input name="mail" onChange={HandleInput} type="email" placeholder="Email" /></label>
+                    <label for="password">Password<input name="password" onChange={HandleInput} type="Password" placeholder="Password" /></label>
+                    <label for="confirm_password">Confirm Password<input name="confirm_password" onChange={HandleInput} type="Password" placeholder="Password" /></label>
+
+                    <div className="twoInp">
+                    <label for="ed_program_id">
+                        Smjer
+						<select name="ed_program_id" onChange={HandleInput}>
+                            <option disabled selected>Smjer</option>
+                            {Edprograms.map((Options) => {
+                                return(<option placeholder="Odeljenje" value={Options.id}>{Options.name}</option>)
                             })}
                         </select>
 					</label>
-                    <label>
+                    <label for="class_id">
 						Odeljenje
-						<select>
-                            <option disabled selected >Odeljenje</option>
-                            {OdljOptions.map((Options) => {
-                                return(<option placeholder="Pol" value={Options.value}>{Options.value}</option>)
+						<select name="class_id"onChange={HandleInput}>
+                            <option disabled value="odeljenje" selected>Odeljenje</option>
+                            {classes.map((Options) => {
+                                return(<option placeholder="Odeljenje" value={Options.id}>{Options.name}</option>)
                             })}
                         </select>
 					</label>
                     </div>
-					
-					<label>
+					<label for="gender">
 						Pol
-						<select>
+						<select name="gender" onChange={HandleInput}>
                             <option disabled selected >Pol</option>
                             {PolOptions.map((Options) => {
                                 return(<option placeholder="Pol" value={Options.value}>{Options.value}</option>)
                             })}
                         </select>
 					</label>
-					
-					<button>Registruj se</button>
-                    
-					<h4>Imate nalog? <Link to="/Login">Prijavi se</Link></h4>
+					<button onClick={RegisterRequest}>Registruj se</button>
+					<h4>Imate nalog? <Link to="/Login" aria-label="Login">Prijavi se</Link></h4>
 				</div>
 			</div>
             <div id="photo">
                 
 			</div>
-		</section>
+		</motion.section>
 	);
 }
 
-export default Login;
+export default Register;

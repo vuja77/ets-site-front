@@ -1,0 +1,130 @@
+@use "../../../foundation/colors.scss";
+@use "../../../foundation/fonts.scss";
+
+section.Hero-Sec {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 5%;
+  height: 100%;
+  padding-top: 100px;
+  padding-right: 5%;
+
+  div#Hero-text {
+    width: 45%;
+    img#dotsHeader {
+      width: 360px;
+      margin-top: 30px;
+    }
+    h1 {
+      font-size: clamp(1.25rem, 0.4798rem + 2.4648vw, 3.4375rem);
+      font-family: Poppins;
+      font-style: italic;
+      font-weight: 700;
+      span {
+        font-family: Poppins;
+        color: colors.$etsBlue;
+      
+      }
+    }
+    p {
+      font-size: clamp(0.625rem, 0.3169rem + 0.9859vw, 1.5rem);
+      max-width: 36vw;
+      margin-top: 20px;
+    }
+  }
+  div#Hero-photo {
+    width: 55%;
+    img {
+      margin-right: 50px;
+      width: 100%;
+      border-radius: 10px;
+      z-index: 2;
+      position: relative;
+    }
+    #circle1 {
+      width: 100px;
+      height: 100px;
+      background-color: colors.$etsBlue;
+      position: absolute;
+      border-radius: 50%;
+      margin-top: -50px;
+      margin-left: -30px;
+    }
+  }
+  
+}
+.socialNetwork {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 75px;
+  h2 {
+    font-size: clamp(0.625rem, 0.375rem + 1.25vw, 1.875rem);
+    font-family: Poppins;
+    font-weight: 600;
+  }
+  img {
+    width: clamp(5rem, 8.75vw + 2.2rem, 19rem);
+  }
+}
+
+.socialNetworkMb {
+  display: none;
+  padding-left: 30px;
+  flex-direction: row;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+#mbPhoto {
+  margin-top: 20px;
+  margin-left: 5%;
+  width: 90%;
+  border-radius: 10px;
+  z-index: 2;
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  
+  section.Hero-Sec {
+    flex-direction: column;
+    margin-top: 20px;
+    align-items: center;
+    text-align: left;
+    #Hero-photo {
+      width: 100%;
+      display: none;
+    }
+    div#Hero-text {
+      width: 100%;
+      h1{
+        font-size: clamp(1.5625rem, 0.532rem + 5.0114vw, 2.9375rem);
+      }
+      p {
+        font-size: 17px;
+        max-width: 97%;
+        margin-top: 30px;
+      }
+      img#dotsHeader {
+        display: none;
+      }
+    }
+   
+  }
+  #mbPhoto {
+    display: block;
+  }
+
+  .socialNetwork {
+    display: none;
+  }
+  .socialNetworkMb {
+    display: flex;
+    padding-left: 30px;
+    flex-direction: row;
+    gap: 30px;
+    margin-top: 20px;
+  }
+}

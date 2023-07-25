@@ -1,0 +1,164 @@
+@use "../../foundation/colors.scss";
+@use "../../foundation/fonts.scss";
+
+
+
+* {
+	padding: 0px;
+	margin: 0px;
+	font-family: Nunito Sans;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+
+section.Register  {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	div {
+		height: 100vh;	
+	}
+	#photo {
+		background-image: url("../../components/img/Lgphoto.jpg");
+		background-size: cover;
+		background-position: center;
+		width: 55%;
+	}
+	#inp {
+		background: white;
+		display: flex;
+		justify-content: center;
+		padding: 50px 5% 0px 5%;
+		flex-direction: column;
+		width: 45%;
+		text-align: center;
+		label {
+			text-align: left;
+			color: colors.$gray;
+			font-size: 14px;
+			font-weight: 600;
+		}
+		header {
+			display: flex;
+			flex-direction: row;
+			
+			height: 100px;
+			align-items: center;
+			text-align: center;
+			img {
+				max-width: 70px;
+			}
+			h1 {
+				font-weight: 700;
+				font-size: clamp(0.9375rem, 0.4485rem + 1.8627vw, 2.00rem);
+				margin-left: 30px;
+				color: colors.$gray;
+			
+			}
+		}
+		#vasoAligrudic {
+			margin: auto;
+			width: 200px;
+			border-bottom: 1px dashed gray;
+			line-height: 0.1em;
+			color: colors.$gray;
+			span {
+				color: colors.$gray;
+				background: white;
+				padding: 0px 10px;
+				font-size: 12px;
+			}
+		
+		}
+	}
+	#form {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 23px;
+		margin-top: 70px;
+		input, select {
+			width: 100%;
+			border-radius: 5px;
+			border: 1px solid #DED2D9;
+			padding: 13px 10px;
+			&.error {
+				background-color: red;
+			}
+		
+		}
+		div.twoInp {
+			padding: 25px 0px 25px 0px;
+			label {
+				width: 47%;
+			}
+		}
+		button {
+			border-radius: 6px;
+			background: colors.$etsBlue;
+			padding: 13px 10px 12px 10px;
+			border: none;
+			color: white;
+			
+			margin-top: 20px;
+			box-sizing: content-box;
+		}
+		h4 {
+			color: colors.$gray;
+			margin-top: 30px;
+			align-self: bottom;
+		}
+		div {
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+			height: 20px;
+			justify-content: space-between;
+			align-items: center;
+			p, h5 {
+				font-size: 12px;
+			}
+			h5 {
+				color: colors.$etsBlue;
+				font-family: Nunito Sans;
+				font-weight: 700;
+			}
+		}
+	}
+	
+}
+@media only screen and (max-width: 1024px) {
+	#photo {
+		width: 50%;
+	}
+
+	section.Register {
+		#inp {
+			width: 55%;
+		}
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	#photo {
+		width: 45%;
+	}
+
+	
+}
+
+@media only screen and (max-width: 692px) {
+	#photo {
+		display: none;
+	}
+
+	section.Register {
+		#inp {
+			width: 100%;
+			padding: 50px 10% 0px 10%;
+		}
+	}
+}

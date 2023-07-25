@@ -1,18 +1,18 @@
-import "./Footer.css";
+import "./Footer.scss";
 import Logo from "../../../components/img/logo.svg";
 
 function Footer() {
 	return (
 		<footer>
 			<div className="container">
-				<img src={Logo}></img>
+				<img src={Logo} alt="logo"></img>
 				<div>
 					<h3>Osnovne informacije</h3>
 					<p>VASO ALIGRUDIĆ
 						<br />
 						Vasa Raičkovića
 						<br />
-						Br 2681000
+						Broj ulice 26 Podgorica 81000
 					</p>
 				</div>
 				<div>
