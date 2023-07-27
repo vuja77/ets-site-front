@@ -49,7 +49,7 @@ function Header() {
       </div>
       <LazyMotion features={domAnimation} >
 
-      <m.img id="mbPhoto"src={Skola} alt="skolaMb" animate={{x: [300, 0]}} transition={{duration: 1}}/>
+      <m.img id="mbPhoto"src={Skola} alt="skolaMb" animate={{x: [300, 0]}} transition={{duration: 0.6}}/>
       </LazyMotion>
 
     </>

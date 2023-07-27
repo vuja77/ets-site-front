@@ -7,11 +7,21 @@ import { useState } from "react";
 import axios from "axios";
 import Cookies from 'universal-cookie';
 import Config from "../../Config";
+import { ToastContainer, toast } from 'react-toastify';
+
 function Login() {
+	const Navigate =useNavigate();
+	let cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)token*\=\s*([^;]*).*$)|^.*$/, "$1");
+	console.log(cookieValue);
+	if(cookieValue !== "") {
+	  Navigate("/");
+	}
+	const notify2 = () => toast.error("Mail ili lotinka nisu tacni.Pokusajte ponovo", {position: "bottom-right",theme: "colored", toastId: 'B'});
 	
 const cookies = new Cookies();
 const [LoginInputs, setInputs] = useState([]);
-const Navigate =useNavigate();
+
+
 
 /*Get inputs value*/
 const HandleInput = (event) => {
@@ -27,14 +37,19 @@ const LoginRequest = async (event) => {
 		/*set token cookie*/
 		const token = response.data.success.token;
 		cookies.set('token', token, { path: '/' });
-		/*redirect to dashboard*/
-		Navigate("/");
+		/*redirect to homepage*/
+		Navigate("/", {
+			state: "Uspjesno ste se prijavili",
+		});
 	})
 	.catch((error) => {
-		console.log(error);
+		
+		notify2();
 	})
 } 
 	return (
+		<>
+		<ToastContainer enableMultiContainer toastId={'B'}/>
 		<motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.6 }} className="Login">
 	<div id="photo">
 			</div>
@@ -60,11 +75,16 @@ const LoginRequest = async (event) => {
 						</label>
 						<h5>Zaboravili ste loinku?</h5>
 					</div>
+					
 					<button onClick={LoginRequest}>Login</button>
 						<h4>Nemate nalog? <Link to="/register">Registruj se</Link></h4>
 				</div>
 			</form>
+			
+		
 		</motion.section>
+		
+		</>
 	);
 }
 

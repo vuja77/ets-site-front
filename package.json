@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
     "framer-motion": "^10.12.18",
+    "js-cookie": "^3.0.5",
     "pipwerks-scorm-api-wrapper": "^0.1.2",
     "pptxgenjs": "^3.12.0",
     "react": "^18.2.0",
@@ -23,6 +24,7 @@
     "react-scroll": "^1.8.9",
     "react-select": "^5.7.3",
     "react-social-icons": "^5.15.0",
+    "react-toastify": "^9.1.3",
     "sass": "^1.63.6",
     "universal-cookie": "^4.0.4",
     "web-vitals": "^2.1.4"

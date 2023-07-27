@@ -26,7 +26,6 @@ section.Login {
 		background-size: cover;
 		background-position: center;
 		width: 55%;
-		
 	}
 	#inp {
 		background: white;
@@ -128,7 +127,13 @@ section.Login {
 				height: 12px;
 			}
 		}
-		
+		.errorMsg {
+			align-self: flex-start;
+			color: red;
+			&#hide {
+				display: none;
+			}
+		}
 	}
 	
 }

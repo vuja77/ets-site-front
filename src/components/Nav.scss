@@ -6,14 +6,14 @@ nav {
 	top: 0px;
 	height: 70px;
 	padding-left: 0px;
-	padding-top: 10px;
+	padding-top: 20px;
 	padding-bottom: 30px;
-	z-index: 66;
+	z-index: 6;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	background-color: white;
-	
+	align-items: center;
 	img {
 		width: 50px;
 		height: 50px;
@@ -26,6 +26,8 @@ nav {
 			display: inline-flex;
 			margin-right: 25px;
 			text-decoration: none;
+			align-items: center;
+			cursor: pointer;
 			a#activePage {
 				font-weight: 700;
 				font-style: bold;
@@ -36,6 +38,21 @@ nav {
 				border: none;
 				border-radius: 8px;
 				color: white;
+			}
+			svg {
+				margin-left: 10px;
+				transition: 0.3s;
+		
+			}
+			&#opened {
+				svg {
+					
+					
+					transform: rotate(180deg);
+				}
+			}
+			&.hide {
+				display: none;
 			}
 		}
 		#Hambuger {
@@ -87,6 +104,41 @@ a.active {
 	transform: translateY(-500px);
 	&.active {
 		transform: translateY(0px);
+	}
+}
+
+
+.UserDrop {
+	position: fixed;
+	width: 150px;
+	max-height: 140px;
+	background-color: white;
+	
+	right: 20px;
+	border-radius: 10px;
+	z-index: 7;
+	top: 50px;
+	padding: 10px 0px 10px 0px;
+	box-shadow: 2px 2px 12px 2px rgba(0,0,0,0.08);
+	-webkit-box-shadow: 2px 2px 12px 2px rgba(0,0,0,0.08);
+	-moz-box-shadow: 2px 2px 12px 2px rgba(0,0,0,0.08);
+	ul {
+		width: 100%;
+		li {
+			padding: 15px 20px 15px 20px;
+			width: 100%;
+			list-style: none;
+			white-space: nowrap;
+			cursor: pointer;
+	
+			&:hover {
+				background-color: #ededed;
+			}
+		}
+		
+	}
+	&#hide {
+		display: none;
 	}
 }
 @media only screen and (max-width: 768px) {

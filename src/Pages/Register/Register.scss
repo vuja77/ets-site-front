@@ -79,14 +79,16 @@ section.Register  {
 		display: flex;
 		flex-direction: column;
 		gap: 23px;
-		margin-top: 70px;
+		margin-top: 50px;
 		input, select {
 			width: 100%;
 			border-radius: 5px;
 			border: 1px solid #DED2D9;
 			padding: 13px 10px;
 			&.error {
-				background-color: red;
+				background-color: #fac0c0;
+				border-color: red;
+				border-width: 2px;
 			}
 		
 		}
@@ -108,7 +110,7 @@ section.Register  {
 		}
 		h4 {
 			color: colors.$gray;
-			margin-top: 30px;
+			margin-top: 20px;
 			align-self: bottom;
 		}
 		div {

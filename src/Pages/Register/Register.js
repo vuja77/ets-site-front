@@ -7,6 +7,13 @@ import axios from "axios";
 import Cookies from 'universal-cookie';
 import Config from "../../Config";
 function Register() {
+    const Navigate =useNavigate();
+    useEffect(() => {
+        let cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)token*\=\s*([^;]*).*$)|^.*$/, "$1");
+        if(cookieValue !== "") {
+          Navigate("/");
+        }
+    })	
     const PolOptions = [
         {
             value: "Muski",
@@ -18,15 +25,16 @@ function Register() {
             value: "Ostalo",
         }
     ]
-const Navigate =useNavigate();
 const cookies = new Cookies();
 const [classes, setClasess] = useState([]);
 const [Edprograms, setEdprograms] = useState([]);
 const [RegisterInputs, setInputs] = useState({});
+let [ErrorName, setErrorName] = useState([]);
+let [ErrorValue, setErrorValue] = useState([]);
 
 /*Get inputs value*/
 const HandleInput = (event) => {
-    console.log(RegisterInputs);
+
     setInputs({...RegisterInputs, [event.target.name]: event.target.value,});
 }
 /*Send register request*/
@@ -37,12 +45,17 @@ const RegisterRequest = async (event) => {
         console.log(response.data.success.message);
         const token = response.data.success.token;
 		cookies.set('token', token, { path: '/' });
-		Navigate("/");
+		Navigate("/", {
+            state: "Nalog uspjesno kreiran",
+        });
     })
     .catch((error) => {
-       console.log(error);
+        setErrorName(Object.keys(error.response.data.error));
+        setErrorValue(error.response.data.error);   
     });
 }
+
+
 /*GET edprograms i class*/
 useEffect(() => {
     const ClassFetch = async () => {
@@ -68,13 +81,14 @@ useEffect(() => {
 				<h3 id="vasoAligrudic"><span>Vaso Aligrudić</span></h3>
 				<div id="form" >
                     <div className="twoInp">
-                        <label for="firs_name">Ime<input name="first_name" onChange={HandleInput}type="text" placeholder="Ime"/></label>
-                        <label for="last_name">Prezime<input name="last_name" onChange={HandleInput} type="text" placeholder="Prezime" /></label>
+                        <label for="firs_name">Ime<input  name="first_name"  onChange={HandleInput}type="text" placeholder={ErrorValue["first_name"] ? ErrorValue["first_name"] : "ime"}  className={ErrorName.includes("first_name") ? "error" : ""}required/></label>
+                       
+                        <label for="last_name">Prezime<input name="last_name" onChange={HandleInput} type="text" placeholder={ErrorValue["last_name"] ? ErrorValue["last_name"] : "Prezime"}  className={ErrorName.includes("last_name") ? "error" : ""} required/></label>
                     </div>	
 
-                    <label for="mail">Mail<input name="mail" onChange={HandleInput} type="email" placeholder="Email" /></label>
-                    <label for="password">Password<input name="password" onChange={HandleInput} type="Password" placeholder="Password" /></label>
-                    <label for="confirm_password">Confirm Password<input name="confirm_password" onChange={HandleInput} type="Password" placeholder="Password" /></label>
+                    <label for="mail">Mail<input name="mail" onChange={HandleInput} type="email" p placeholder={ErrorValue["mail"] ? ErrorValue["mail"] : "Mail"} className={ErrorName.includes("mail") ? "error" : ""}/></label>
+                    <label for="password">Password<input name="password" onChange={HandleInput} type="Password"  placeholder={ErrorValue["password"] ? ErrorValue["password"] : "Password"} className={ErrorName.includes("password") ? "error" : ""} required/></label>
+                    <label for="confirm_password">Confirm Password<input name="confirm_password" onChange={HandleInput} type="Password" className={ErrorName.includes("confirm_password") ? "error" : ""} placeholder={ErrorValue["confirm_password"] ? ErrorValue["confirm_password"] : "Confirm Password"} /></label>
 
                     <div className="twoInp">
                     <label for="ed_program_id">
