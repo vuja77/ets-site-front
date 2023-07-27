@@ -146,6 +146,9 @@ a.active {
 		ul {
 			li {
 				display: none;
+				&.UserInf {
+					display: inline-flex;
+				}
 			}
 		}
 	}
@@ -161,6 +164,9 @@ a.active {
 			&#Hambuger, &#Login {
 				display: inline;
 				vertical-align: middle;
+				&.hide {
+					display: none;
+				}
 			}
 			
 		}

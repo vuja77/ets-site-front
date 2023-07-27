@@ -56,7 +56,7 @@ function Nav() {
           <li> <Link to="/o-skoli">O školi</Link> </li>
           <li> Servisi </li>
           <li id="Login" className={cookieValue !== "" ? "hide" : ""}> <Link to="/Login"><button>Log in</button></Link> </li>
-          <li onClick={()=> toggleDropMeni()} id={UserDropMeni === true ? "opened" : ""} className={cookieValue !== "" ? "" : "hide"} >{userMail} <FontAwesomeIcon icon={faAngleDown}/></li>
+          <li onClick={()=> toggleDropMeni()} id={UserDropMeni === true ? "opened" : ""} className={cookieValue !== "" ? "UserInf" : "hide"} >{userMail} <FontAwesomeIcon icon={faAngleDown}/></li>
           <li id="Hambuger">
             <button aria-label="Hambuger" onClick={() => activeMeni === "2" ? setActive("1") : setActive("2")} className={activeMeni === "2" ? "active" : ""}><FontAwesomeIcon icon={faBars} id="bars" size="2x" /><FontAwesomeIcon id="close" icon={faClose} size="2x" /></button>
           </li>
