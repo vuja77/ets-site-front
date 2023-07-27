@@ -16,7 +16,7 @@ function Login() {
 	if(cookieValue !== "") {
 	  Navigate("/");
 	}
-	const notify2 = () => toast.error("Mail ili lotinka nisu tacni.Pokusajte ponovo", {position: "bottom-right",theme: "colored", toastId: 'B'});
+	const notify2 = () => toast.error("Mail ili lozinka nisu tačni.Pokušajte ponovo", {position: "bottom-right",theme: "colored", toastId: 'B'});
 	
 const cookies = new Cookies();
 const [LoginInputs, setInputs] = useState([]);
