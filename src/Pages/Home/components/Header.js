@@ -17,7 +17,7 @@ function Header() {
       <section className="Hero-Sec">
       <LazyMotion features={domAnimation} >
           <m.div id="Hero-text" animate={{x: [-300, 0]}} transition={{duration: 0.6}}>
-            <h1>Elektrotehnička škola <br /><span>“Vaso Aligrudic”</span></h1>
+            <h1>Elektrotehnička škola <br /><span>“Vaso Aligrudić”</span></h1>
 
             <p> Elektrotehnička škola igra važnu ulogu u razvoju tehnologije i inovacija. Učenici koji pohađaju ovu školu mogu da razviju nove ideje i tehnologije koje mogu da pomognu u rešavanju problema u društvu i industriji.</p>
             <img id="dotsHeader" src={dots} alt="dots"/> 

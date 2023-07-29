@@ -50,6 +50,7 @@ const RegisterRequest = async (event) => {
         });
     })
     .catch((error) => {
+        console.log(error.response.data.error);
         setErrorName(Object.keys(error.response.data.error));
         setErrorValue(error.response.data.error);   
     });
@@ -77,19 +78,24 @@ useEffect(() => {
 				<header>
                     <Link to="/"><img src={Logo} alt="logo"/></Link>
 					<h1>Kreiraj nalog</h1>
+                    <div class="helper"></div>
 				</header>
 				<h3 id="vasoAligrudic"><span>Vaso Aligrudić</span></h3>
 				<div id="form" >
                     <div className="twoInp">
-                        <label for="firs_name">Ime<input  name="first_name"  onChange={HandleInput}type="text" placeholder={ErrorValue["first_name"] ? ErrorValue["first_name"] : "ime"}  className={ErrorName.includes("first_name") ? "error" : ""}required/></label>
-                       
-                        <label for="last_name">Prezime<input name="last_name" onChange={HandleInput} type="text" placeholder={ErrorValue["last_name"] ? ErrorValue["last_name"] : "Prezime"}  className={ErrorName.includes("last_name") ? "error" : ""} required/></label>
+                        <label for="firs_name">Ime*<input  name="first_name"  onChange={HandleInput}type="text" placeholder={ErrorValue["first_name"] ? ErrorValue["first_name"] : "ime"}  className={ErrorName.includes("first_name") ? "error" : ""}required/></label>
+                        <label for="last_name">Prezime*<input name="last_name" onChange={HandleInput} type="text" placeholder={ErrorValue["last_name"] ? ErrorValue["last_name"] : "Prezime"}  className={ErrorName.includes("last_name") ? "error" : ""} required/></label>
                     </div>	
+                    <p className="Error">{ErrorValue["first_name"] ? ErrorValue["first_name"] : ""} <span>{ErrorValue["last_name"] ? ErrorValue["last_name"] : ""}</span></p>
 
-                    <label for="mail">Mail<input name="mail" onChange={HandleInput} type="email" p placeholder={ErrorValue["mail"] ? ErrorValue["mail"] : "Mail"} className={ErrorName.includes("mail") ? "error" : ""}/></label>
-                    <label for="password">Password<input name="password" onChange={HandleInput} type="Password"  placeholder={ErrorValue["password"] ? ErrorValue["password"] : "Password"} className={ErrorName.includes("password") ? "error" : ""} required/></label>
-                    <label for="confirm_password">Confirm Password<input name="confirm_password" onChange={HandleInput} type="Password" className={ErrorName.includes("confirm_password") ? "error" : ""} placeholder={ErrorValue["confirm_password"] ? ErrorValue["confirm_password"] : "Confirm Password"} /></label>
+                    <label for="mail">Mail*<input name="mail" onChange={HandleInput} type="email" p placeholder={ErrorValue["mail"] ? ErrorValue["mail"] : "Mail"} className={ErrorName.includes("mail") ? "error" : ""}/></label>
+                    <p className="Error">{ErrorValue["mail"] ? ErrorValue["mail"] : ""}</p>
 
+                    <label for="password">Password*<input name="password" onChange={HandleInput} type="Password"  placeholder={ErrorValue["password"] ? ErrorValue["password"] : "Password"} className={ErrorName.includes("password") ? "error" : ""} required/></label>
+                    <p className="Error">{ErrorValue["password"] ? ErrorValue["password"] : ""}</p>
+
+                    <label for="confirm_password">Confirm Password*<input name="confirm_password" onChange={HandleInput} type="Password" className={ErrorName.includes("confirm_password") ? "error" : ""} placeholder={ErrorValue["confirm_password"] ? ErrorValue["confirm_password"] : "Confirm Password"} /></label>
+                    <p className="Error">{ErrorValue["confirm_password"] ? ErrorValue["confirm_password"] : ""}</p>
                     <div className="twoInp">
                     <label for="ed_program_id">
                         Smjer

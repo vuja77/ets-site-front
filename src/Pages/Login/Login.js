@@ -3,7 +3,7 @@ import Logo from "../../components/img/logo.svg";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import {motion} from "framer-motion";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import axios from "axios";
 import Cookies from 'universal-cookie';
 import Config from "../../Config";
@@ -11,11 +11,12 @@ import { ToastContainer, toast } from 'react-toastify';
 
 function Login() {
 	const Navigate =useNavigate();
-	let cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)token*\=\s*([^;]*).*$)|^.*$/, "$1");
-	console.log(cookieValue);
-	if(cookieValue !== "") {
-	  Navigate("/");
-	}
+	useEffect(() => {
+        let cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)token*\=\s*([^;]*).*$)|^.*$/, "$1");
+        if(cookieValue !== "") {
+          Navigate("/");
+        }
+    })	
 	const notify2 = () => toast.error("Mail ili lozinka nisu tačni.Pokušajte ponovo", {position: "bottom-right",theme: "colored", toastId: 'B'});
 	
 const cookies = new Cookies();
@@ -57,6 +58,8 @@ const LoginRequest = async (event) => {
 				<header>
 					<Link to="/"><img src={Logo} alt="logo"/></Link>
 					<h1>Prijavi se na svoj profil</h1>
+                    <div class="helper"></div>
+
 				</header>
 				<h3 id="vasoAligrudic"><span>Vaso Aligrudić</span></h3>
 				<div id="form">

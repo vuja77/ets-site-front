@@ -1,6 +1,7 @@
 @use "../../foundation/colors.scss";
 @use "../../foundation/fonts.scss";
-
+$min-font-size: 0.9575rem;
+$max-font-size: 2.00rem;
 
 * {
 	padding: 0px;
@@ -39,22 +40,26 @@ section.Login {
 		text-align: center;
 		header {
 			display: flex;
-			flex-direction: row;
 			height: 100px;
 			align-items: center;
-			img {
+			text-align: center;
+			img, .helper {
+				min-width: 50px;
 				max-width: 70px;
+				display: block;
+				width: 100%;
 			}
 			h1 {
+				padding-left: 20px;
 				font-weight: 700;
-				font-size: clamp(0.9375rem, 0.4485rem + 1.8627vw, 2.00rem);
-				margin-left: 30px;
+				font-size: clamp($min-font-size, 0.4485rem + 1.8627vw, $max-font-size);
+				margin: auto;
 				color: colors.$gray;
-			
+				white-space: nowrap;
 			}
 			
-			}
 		}
+	}
 		#vasoAligrudic {
 			margin: auto;
 			width: 200px;

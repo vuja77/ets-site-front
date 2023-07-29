@@ -1,6 +1,7 @@
 @use "../../foundation/colors.scss";
 @use "../../foundation/fonts.scss";
-
+$min-font-size: 0.9275rem;
+$max-font-size: 2.00rem;
 
 
 * {
@@ -43,21 +44,23 @@ section.Register  {
 		}
 		header {
 			display: flex;
-			flex-direction: row;
-			
 			height: 100px;
 			align-items: center;
 			text-align: center;
-			img {
+			img, .helper {
+				min-width: 50px;
 				max-width: 70px;
+				display: block;
+				width: 100%;
 			}
 			h1 {
 				font-weight: 700;
-				font-size: clamp(0.9375rem, 0.4485rem + 1.8627vw, 2.00rem);
-				margin-left: 30px;
+				font-size: clamp($min-font-size, 0.4485rem + 1.8627vw, $max-font-size);
+				margin: auto;
 				color: colors.$gray;
-			
+				white-space: nowrap;
 			}
+			
 		}
 		#vasoAligrudic {
 			margin: auto;
@@ -78,7 +81,7 @@ section.Register  {
 		width: 100%;
 		display: flex;
 		flex-direction: column;
-		gap: 23px;
+		gap: 15px;
 		margin-top: 50px;
 		input, select {
 			width: 100%;
@@ -92,8 +95,22 @@ section.Register  {
 			}
 		
 		}
+		.Error {
+			font-size: 10px;
+			color: red;
+			height: 1px;
+			align-self: flex-start;
+			margin-top: -10px;
+			padding-bottom: 5px;
+			display: block;
+			text-align: left;
+			width: 100%;
+			span {
+				float: right;
+			}
+		}
 		div.twoInp {
-			padding: 25px 0px 25px 0px;
+			padding: 25px 0px 30px 0px;
 			label {
 				width: 47%;
 			}
@@ -161,6 +178,17 @@ section.Register  {
 		#inp {
 			width: 100%;
 			padding: 50px 10% 0px 10%;
+			header{
+				h1{
+					font-size: 30px;
+				}
+			    img, .helper{
+					max-width: 50px;
+					display: block;
+					width: 100%;
+
+			    }
+			}
 		}
 	}
 }

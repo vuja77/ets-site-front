@@ -15,6 +15,7 @@ function Nav() {
   const Navigate =useNavigate();
   let cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)token*\=\s*([^;]*).*$)|^.*$/, "$1");
   const [userMail, setMail] = useState();
+  const [userRole, setRole] = useState();
   let [activeMeni, setActive] = useState("1");
   const [UserDropMeni, setDropMeni] = useState(false);
 
@@ -39,6 +40,7 @@ function Nav() {
       }})
       .then((response) => {
         setMail(response.data.success.first_name + " " + response.data.success.last_name)
+        setRole(response.data.success.role_id);
       })
     }
     if(cookieValue !== "") {
@@ -64,7 +66,7 @@ function Nav() {
       </nav>
       <div className="UserDrop" id={UserDropMeni === true ? "" : "hide"}>
         <ul>
-          <li ><FontAwesomeIcon icon={faGears}/> Admin panel</li>
+          <li className={userRole == 1 ? "hide" : ""} ><FontAwesomeIcon icon={faGears}/> Admin panel</li>
           <li onClick={() => LogOut()}><FontAwesomeIcon icon={faRightFromBracket}/> Logout</li>
         </ul>
       </div>
