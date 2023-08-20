@@ -37,6 +37,11 @@ section#servisi {
 			gap: 30px;
 			padding-top: 50px;
 			font-size: 24px;
+			transition: 0.4s ease;
+			cursor: pointer;
+			&:hover {
+				transform: scale(1.08);
+			}
 			div {
 				width: 113px;
 				height: 113px;
@@ -143,7 +148,9 @@ section#servisi {
 				h3 {
 					font-size: 17px;
 				}
+				
 			}
+		
 		}
 		#grayBox {
 			height: 70vh;

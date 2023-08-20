@@ -1,7 +1,7 @@
 import "./Servisi.scss";
 import dots from "../../../components/img/Group 70.svg";
 import { LazyMotion, domAnimation, m } from "framer-motion"
-
+import Config from "../../../Config";
 function Servisi() {
 	return (
 		<section id="servisi">
@@ -17,11 +17,11 @@ function Servisi() {
 						<strong>Prijavi štetu</strong>
 						<p>Sačuvaj školu i Prijavi štetu</p>
 					</div >
-					<div className="Srv" id="Lms">
+					<a href={Config.lmsUrl}><div className="Srv" id="Lms">
 						<div></div>
 						<strong>LMS</strong>
 						<p>Budi i ti u timu</p>
-					</div>
+					</div></a>	
 					<div className="Srv" id="Obavjestenja">
 						<div></div>
 						<strong>Obavještenja</strong>

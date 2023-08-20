@@ -1,6 +1,6 @@
 import "./Login.scss";
 import Logo from "../../components/img/logo.svg";
-import { Link } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import {motion} from "framer-motion";
 import { useState,useEffect } from "react";
@@ -32,6 +32,7 @@ const HandleInput = (event) => {
 /*Send login request*/
 const LoginRequest = async (event) => {
 	event.preventDefault();
+	console.log("a");
 	await axios.post(Config.apiUrl+"/login", LoginInputs)
 	.then((response) => {
 		console.log(response.data.success.token);
@@ -42,6 +43,7 @@ const LoginRequest = async (event) => {
 		Navigate("/", {
 			state: "Uspjesno ste se prijavili",
 		});
+	
 	})
 	.catch((error) => {
 		

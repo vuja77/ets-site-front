@@ -2,6 +2,7 @@ import Home from "./Pages/Home/Home";
 
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
+import Oskoli from "./Pages/Oskoli.js";
 import Nav from "./components/Nav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Nav />}>
           <Route index element={<Home />} />
+          <Route path="o-skoli" element={<Oskoli />} />
         </Route>
         <Route path="/" >
           <Route path="login" element={<Login />} />
@@ -23,6 +25,7 @@ function App() {
           <Route path="register" element={<Register />} />
       
         </Route>
+        
       </Routes>
     </BrowserRouter>
     </AnimatePresence>
