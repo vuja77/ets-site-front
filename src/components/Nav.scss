@@ -8,7 +8,7 @@ nav {
 	padding-left: 0px;
 	padding-top: 20px;
 	padding-bottom: 30px;
-	z-index: 6;
+	z-index: 9;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -28,16 +28,43 @@ nav {
 			text-decoration: none;
 			align-items: center;
 			cursor: pointer;
-			a#activePage {
-				font-weight: 700;
-				font-style: bold;
+			border-bottom: 3px solid white;
+
+			&.active {
+				a {
+					font-weight: 700;
+					font-style: bold;
+					border-bottom: 3px solid #211E61;
+
+				}
+			
+			}
+			&:hover {
+				transition: 0.4s;
+				
+					border-color: #211E61;
+				&#Login {
+					border-bottom: 0px;
+
+				}
 			}
 			button {
 				background: #211E61;
-				padding: 12px 40px;
+				padding: 10px 40px;
 				border: none;
 				border-radius: 8px;
 				color: white;
+				transition: 0.4s;
+				font-family: inherit;
+				&.Login {
+					border: 3px solid #211E61;
+					&:hover {
+						background-color: white;
+						color: #211E61;
+					}
+				}
+
+				
 			}
 			svg {
 				margin-left: 10px;
@@ -108,7 +135,7 @@ a.active {
 }
 
 
-.UserDrop {
+.UserDrop, .ServisiDrop {
 	position: fixed;
 	width: 150px;
 	max-height: 140px;
@@ -140,6 +167,10 @@ a.active {
 	&#hide {
 		display: none;
 	}
+}
+.ServisiDrop {
+	right: 150px;
+	max-height: 300px;
 }
 @media only screen and (max-width: 768px) {
 	nav {

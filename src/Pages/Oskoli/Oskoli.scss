@@ -1,0 +1,113 @@
+.Osk {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	width: 100vw;
+	align-items: center;
+	.Slider {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		button {
+			height: 20px;
+			background-color: rgba(1, 1, 1, 0);
+			border: none;
+		}
+		img.Oskoli {
+			width: 80%;
+			aspect-ratio: 16 / 9;
+			display: none;
+			
+			transition: 1s;
+			opacity: 0;
+			object-fit: cover;
+			animation: slidein 0.5s;
+			&.active {
+				display: block;
+
+				opacity: 1;
+			}
+			@keyframes slidein {
+				from {
+				  opacity: 0.3;
+				}
+			  
+				to {
+				  opacity: 1;
+				}
+			  }
+		}
+	}
+	
+	.txt {width: 45%;
+		position: relative;
+		top: -100px;
+		text-align: center;
+		.Back {
+			width: 100%;
+			position: relative;
+		padding: 50px;
+			
+			background-color: #EFF1FF;
+		
+		
+			text-align: center;
+			p {
+				white-space: pre-wrap;
+			}
+			z-index: 1;
+			h1 {
+				font-size: 40px;
+			}
+		}
+		
+		.circle1 {
+			width: 100px;
+			aspect-ratio: 1/1;
+			background-color: #211E61;
+			position: relative;
+			border-radius: 100%;
+			top: -60px;
+			right:40px ;
+			z-index: 0;
+		}
+	}
+	
+}
+
+@media only screen and (max-width: 900px) {
+	.Osk {
+		img.Oskoli {
+			z-index: 1;
+		}
+		.txt {
+			width: 90%;
+			z-index: 0;
+			top: 0px;
+		}
+	}
+	
+}
+@media only screen and (max-width: 768px) {
+	.Osk {
+		padding-top: 100px;
+	
+	}
+	
+}
+@media only screen and (max-width: 768px) {
+	.Osk {
+		img.Oskoli {
+			width: 100vw;
+		}
+		.txt {
+			width: 100vw;
+			.Back {
+			background-color: white;
+			padding: 20px;
+
+			}
+		}
+	}
+	
+}

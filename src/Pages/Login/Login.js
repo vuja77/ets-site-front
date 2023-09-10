@@ -1,6 +1,6 @@
 import "./Login.scss";
 import Logo from "../../components/img/logo.svg";
-import { Link, redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import {motion} from "framer-motion";
 import { useState,useEffect } from "react";
@@ -38,7 +38,7 @@ const LoginRequest = async (event) => {
 		console.log(response.data.success.token);
 		/*set token cookie*/
 		const token = response.data.success.token;
-		cookies.set('token', token, { path: '/' });
+		cookies.set('token', token);
 		/*redirect to homepage*/
 		Navigate("/", {
 			state: "Uspjesno ste se prijavili",
