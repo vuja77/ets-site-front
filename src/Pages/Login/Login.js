@@ -7,6 +7,7 @@ import { useState,useEffect } from "react";
 import axios from "axios";
 import Cookies from 'universal-cookie';
 import Config from "../../Config";
+
 import { ToastContainer, toast } from 'react-toastify';
 
 function Login() {
@@ -49,7 +50,7 @@ const LoginRequest = async (event) => {
 		
 		notify2();
 	})
-} 
+}
 	return (
 		<>
 		<ToastContainer enableMultiContainer toastId={'B'}/>

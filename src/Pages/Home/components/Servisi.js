@@ -2,6 +2,7 @@ import "./Servisi.scss";
 import dots from "../../../components/img/Group 70.svg";
 import { LazyMotion, domAnimation, m } from "framer-motion"
 import { Link } from "react-router-dom";
+import Config from "../../../Config";
 function Servisi() {
 	return (
 		<section id="servisi">
@@ -17,7 +18,7 @@ function Servisi() {
 						<strong>Prijavi štetu</strong>
 						<p>Sačuvaj školu i Prijavi štetu</p>
 					</div ></Link>	
-					<a href={/*Config.lmsUrl*/"https://elektropg.online/ets/"}><div className="Srv" id="Lms">
+					<a href={Config.lmsUrl}><div className="Srv" id="Lms">
 						<div></div>
 						<strong>Moodle</strong>
 						<p>Platforma za učenje</p>

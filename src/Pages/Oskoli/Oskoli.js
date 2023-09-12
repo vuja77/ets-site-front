@@ -37,7 +37,7 @@ function Oskoli() {
     }
 const Images = [
     {
-        name: "IMG-b3bfec76d88e0adef0fbcd08679bd63c-V.jpg"
+        name: "viber_slika_2023-09-09_19-10-14-121.jpg"
     },
     {
         name: "IMG-6165250007c0876730352cf000e10c8a-V.jpg"

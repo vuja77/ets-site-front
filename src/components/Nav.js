@@ -8,11 +8,12 @@ import { faClose, faAngleDown, faRightFromBracket, faGears } from '@fortawesome/
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Config from "../Config";
 import Cookies from 'universal-cookie';
 import { useLocation } from "react-router-dom";
+import Config from "../Config";
+//import Config from "../Config";
 
-function Nav() {
+function Nav(props) {
   const Navigate = useNavigate();
   const location = useLocation();
   let cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)token*\=\s*([^;]*).*$)|^.*$/, "$1");
@@ -31,7 +32,7 @@ function Nav() {
       state: "Uspjesno ste se odjavili",
     });
   }
-  useEffect(() => {
+  /*useEffect(() => {
     const fetchApiData = async () => {
       await axios.get(Config.apiUrl + "/details", {
         headers: {
@@ -47,7 +48,7 @@ function Nav() {
       fetchApiData();
     }
 
-  }, []);
+  }, []);*/
   return (
     <>
       <nav className={activeMeni === "2" ? "active" : ""}>
@@ -59,9 +60,9 @@ function Nav() {
           <li onClick={() => setServisiDropMeni(!ServisiDropMeni)} id={ServisiDropMeni === true ? "opened" : ""}> Servisi <FontAwesomeIcon icon={faAngleDown} /></li>
           
          {/*<li id="Login" className={cookieValue !== "" ? "hide" : ""}> <Link to="/Login"><button>Log in</button></Link> </li> */} 
-          <li id="Login" className={cookieValue !== "" ? "hide" : ""}> <a href="https://elektropg.online/ets/login/index.php"><button className="Login">Prijavi se</button></a> </li>
+          <li id="Login" className={cookieValue !== "" ? "hide" : ""}> <a href="/login"><button className="Login">Prijavi se</button></a> </li>
 
-          <li onClick={() => setDropMeni(!UserDropMeni)} id={UserDropMeni === true ? "opened" : ""} className={cookieValue !== "" ? "UserInf" : "hide"} >{userMail} <FontAwesomeIcon icon={faAngleDown} /></li>
+          <li onClick={() => setDropMeni(!UserDropMeni)} id={UserDropMeni === true ? "opened" : ""} className={cookieValue !== "" ? "UserInf" : "hide"} >{props.userMail} <FontAwesomeIcon icon={faAngleDown} /></li>
           <li id="Hambuger">
             <button aria-label="Hambuger" onClick={() => activeMeni === "2" ? setActive("1") : setActive("2")} className={activeMeni === "2" ? "active" : ""}><FontAwesomeIcon icon={faBars} id="bars" size="2x" /><FontAwesomeIcon id="close" icon={faClose} size="2x" /></button>
           </li>
@@ -77,7 +78,7 @@ function Nav() {
       </div>
       <div className="ServisiDrop" id={ServisiDropMeni === true ? "" : "hide"}>
         <ul>
-        <Link to="https://elektropg.online/ets/"> <li>Moodle</li></Link>
+        <Link to={Config.lmsUrl}> <li>Moodle</li></Link>
         <Link to="zasto-cutis"> <li>Zašto ćutiš</li></Link>
         <Link to="prijavi-stetu"> <li> Prijavi štetu</li></Link>
 
