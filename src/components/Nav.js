@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from 'universal-cookie';
 import { useLocation } from "react-router-dom";
-import Config from "../Config.js.example";
+import Config from "../Config.js";
 //import Config from "../Config";
 
 function Nav(props) {
@@ -60,7 +60,7 @@ function Nav(props) {
           <li onClick={() => setServisiDropMeni(!ServisiDropMeni)} id={ServisiDropMeni === true ? "opened" : ""}> Servisi <FontAwesomeIcon icon={faAngleDown} /></li>
           
          {/*<li id="Login" className={cookieValue !== "" ? "hide" : ""}> <Link to="/Login"><button>Log in</button></Link> </li> */} 
-          <li id="Login" className={cookieValue !== "" ? "hide" : ""}> <a href="/login"><button className="Login">Prijavi se</button></a> </li>
+          <li id="Login" className={cookieValue !== "" ? "hide" : ""}> <Link to="/login"><button className="Login">Prijavi se</button></Link> </li>
 
           <li onClick={() => setDropMeni(!UserDropMeni)} id={UserDropMeni === true ? "opened" : ""} className={cookieValue !== "" ? "UserInf" : "hide"} >{props.userMail} <FontAwesomeIcon icon={faAngleDown} /></li>
           <li id="Hambuger">
