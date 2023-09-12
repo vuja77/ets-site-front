@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from 'universal-cookie';
 import { useLocation } from "react-router-dom";
-import Config from "../Config";
+import Config from "../Config.js.example";
 //import Config from "../Config";
 
 function Nav(props) {

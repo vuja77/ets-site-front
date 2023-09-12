@@ -2,7 +2,7 @@ import "./Servisi.scss";
 import dots from "../../../components/img/Group 70.svg";
 import { LazyMotion, domAnimation, m } from "framer-motion"
 import { Link } from "react-router-dom";
-import Config from "../../../Config";
+import Config from "../../../Config.js.example";
 function Servisi() {
 	return (
 		<section id="servisi">

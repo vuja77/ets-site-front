@@ -5,7 +5,7 @@ import {motion} from "framer-motion"
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from 'universal-cookie';
-import Config from "../../Config";
+import Config from "../../Config.js.example";
 function Register() {
     const Navigate =useNavigate();
     useEffect(() => {

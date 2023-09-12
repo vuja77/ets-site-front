@@ -7,7 +7,7 @@ import Nav from "./components/Nav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
-import Config from "./Config";
+import Config from "./Config.js.example";
 import axios from "axios";
 import Izrada from "./Pages/uIzdradi/Izrada";
 
